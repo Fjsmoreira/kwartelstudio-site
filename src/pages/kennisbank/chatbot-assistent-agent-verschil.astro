@@ -1,0 +1,105 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Wat is het verschil tussen een chatbot en een AI-agent?',
+    a: 'Een chatbot beantwoordt vragen binnen een gesprek. Een agent voert ook taken uit: hij zoekt iets op, vult een formulier in, maakt een afspraak of zet een order klaar. Een agent heeft daarvoor toegang tot systemen nodig, en dus duidelijke grenzen.',
+  },
+  {
+    q: 'Wat kost een AI-chatbot voor een website?',
+    a: 'Een eenvoudige chatbot die antwoordt op basis van je eigen veelgestelde vragen kost € 3.950 tot € 6.000 en staat in drie weken live. Een agent die ook afspraken in een systeem zet, zit eerder op € 7.500 tot € 12.000.',
+  },
+  {
+    q: 'Wanneer is een agent een slecht idee?',
+    a: 'Als de actie onomkeerbaar is en fouten duur zijn: betalingen, orderverwerking zonder controle, medische beslissingen, personeelsbeoordelingen. Daar hoort een mens tussen, altijd.',
+  },
+];
+---
+
+<Artikel
+  titel="Chatbot, assistent of agent: wat heb je echt nodig?"
+  omschrijving="Het verschil tussen een chatbot, een AI-assistent en een AI-agent, met kosten, risico's en wanneer elk type voor een mkb-bedrijf zin heeft."
+  slug="chatbot-assistent-agent-verschil"
+  datum="2026-10-18"
+  leestijd={6}
+  onderwerp="Begrippen"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> een chatbot beantwoordt vragen, een assistent helpt een
+      medewerker met een taak, en een agent voert zelfstandig stappen uit in je systemen. Voor de
+      meeste mkb-processen is een assistent met een mens in de controle de beste keuze: de
+      tijdwinst is groot, het risico klein en de prijs het laagst.
+    </p>
+  </div>
+
+  <p>
+    De drie woorden worden door elkaar gebruikt, meestal om iets duurders te verkopen. Ze
+    betekenen wel degelijk iets anders, en het verschil bepaalt wat je betaalt en hoeveel risico je
+    loopt.
+  </p>
+
+  <h2>De chatbot</h2>
+  <p>
+    Een chatbot voert een gesprek met een bezoeker of klant. Hij antwoordt op vragen, verwijst
+    door en sluit af met een link of een contactformulier. Hij doet niets in je systemen.
+  </p>
+  <ul>
+    <li><strong>Past bij:</strong> veelgestelde vragen, openingstijden, levertijden, productinformatie.</li>
+    <li><strong>Kost:</strong> € 3.950 – € 6.000 voor een versie op basis van je eigen informatie.</li>
+    <li><strong>Risico:</strong> laag, zolang hij niets verzint. Daarom bouwen we met bronvermelding en een vaste set onderwerpen.</li>
+    <li><strong>Zwakke plek:</strong> een chatbot die alles belooft, maar niets kan. Dan bellen mensen alsnog.</li>
+  </ul>
+
+  <h2>De assistent</h2>
+  <p>
+    Een assistent helpt een medewerker bij een taak: een offerte opstellen, een verslag maken, een
+    e-mail beantwoorden, een vraag beantwoorden op basis van het eigen archief. De medewerker
+    controleert en verstuurt.
+  </p>
+  <ul>
+    <li><strong>Past bij:</strong> offertes, verslaglegging, dossiers, inkooporders, klantenservice.</li>
+    <li><strong>Kost:</strong> € 3.950 – € 8.500, afhankelijk van koppelingen.</li>
+    <li><strong>Risico:</strong> beheersbaar, want een mens keurt goed voordat er iets naar buiten gaat.</li>
+    <li><strong>Waarom dit meestal wint:</strong> je krijgt 70 tot 90 procent van de tijdwinst zonder de aansprakelijkheid van een autonome beslissing.</li>
+  </ul>
+
+  <h2>De agent</h2>
+  <p>
+    Een agent voert zelfstandig een reeks stappen uit: hij zoekt beschikbaarheid, boekt de
+    afspraak, stuurt de bevestiging, werkt de voorraad bij. Hij heeft daarvoor toegang tot je
+    systemen nodig.
+  </p>
+  <ul>
+    <li><strong>Past bij:</strong> reserveringen, het klaarzetten van orders, het opvolgen van statusupdates, het herplannen van werk.</li>
+    <li><strong>Kost:</strong> € 7.500 – € 15.000, met doorlopende kosten voor monitoring.</li>
+    <li><strong>Risico:</strong> hoger. Een agent die twintig keer goed gaat en één keer fout, kost meer dan hij oplevert.</li>
+    <li><strong>Voorwaarde:</strong> een noodrem, logging van elke actie en een duidelijke grens waar hij moet stoppen en om hulp vragen.</li>
+  </ul>
+
+  <h2>Hoe je kiest</h2>
+  <p>
+    Stel drie vragen bij het proces dat je op het oog hebt:
+  </p>
+  <ol>
+    <li><strong>Moet er iets in een systeem gebeuren, of alleen tekst gemaakt worden?</strong> Alleen tekst: assistent. Schrijven in een systeem: agent, met extra waarborgen.</li>
+    <li><strong>Wat kost een fout?</strong> Een verkeerde concept-offerte kost een correctie. Een verkeerde order of betaling kost geld, voorraad of een klant.</li>
+    <li><strong>Hoe vaak komt het voor?</strong> Twintig keer per week of vaker rechtvaardigt een agent. Een paar keer per week is een assistent genoeg, en veel goedkoper.</li>
+  </ol>
+
+  <h2>De valkuil van de demo</h2>
+  <p>
+    Elke agent demo’t indrukwekkend op tien voorbeeldgevallen. De vraag is wat er gebeurt bij
+    geval elf tot honderd: de klant die twee afspraken tegelijk wil, de order met een
+    handgeschreven bijlage, de e-mail in het Duits met een spelfout in de postcode. Reken bij een
+    agent altijd op een tweede bouwronde voor de uitzonderingen, en vraag een leverancier hoeveel
+    van de projecttijd daarvoor is gereserveerd.
+  </p>
+  <p>
+    Ons advies aan vrijwel elk mkb-bedrijf dat begint: bouw eerst een assistent. Bewijs daarmee dat
+    de uitkomst klopt en dat je team hem gebruikt. Wordt hij dagelijks gebruikt en is de uitkomst
+    betrouwbaar, dan is de stap naar een agent klein — en veel beter onderbouwd.
+  </p>
+</Artikel>

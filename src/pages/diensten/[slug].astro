@@ -1,0 +1,92 @@
+---
+import Base from '../../layouts/Base.astro';
+import Faq from '../../components/Faq.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { DIENSTEN, SITE } from '../../config';
+import { organisation, dienstSchema, faqSchema, breadcrumbSchema, webPage } from '../../lib/schema';
+
+export function getStaticPaths() {
+  return DIENSTEN.map((d) => ({ params: { slug: d.slug }, props: { dienst: d } }));
+}
+
+const { dienst } = Astro.props;
+const pad = `/diensten/${dienst.slug}/`;
+
+const schemas = [
+  organisation(),
+  webPage(pad, dienst.titel, dienst.kort),
+  dienstSchema(dienst.slug),
+  faqSchema(dienst.faq),
+  breadcrumbSchema([
+    { naam: 'Home', pad: '/' },
+    { naam: 'Diensten', pad: '/diensten/' },
+    { naam: dienst.titel, pad },
+  ]),
+];
+---
+
+<Base title={dienst.titel} description={dienst.kort.slice(0, 155)} path={pad} schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/diensten/">Diensten</a></li>
+      <li>{dienst.titel}</li>
+    </ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">{dienst.code} · {dienst.doorlooptijd} · {dienst.investering}</p>
+    <h1>{dienst.titel}</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:50ch">{dienst.kort}</p>
+    <div class="btn-row" style="margin-top:1.6rem">
+      <a class="btn btn--primary" href="/contact/">Plan een gesprek<span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a class="btn btn--ghost" href="/prijzen/">Bekijk tarieven</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Wat het is</p>
+        <h2>Hoe dit er in de praktijk uitziet</h2>
+      </div>
+      <div class="prose">
+        <p>{dienst.intro}</p>
+        <h2>Wat er in zit</h2>
+        <div class="grid-2" style="gap:1.4rem;margin-top:1rem">
+          {dienst.bouwstenen.map((b) => (
+            <div>
+              <h3 style="font-size:1.05rem;margin-bottom:0.3rem">{b.titel}</h3>
+              <p style="font-size:0.95rem;margin:0">{b.tekst}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>Wat het oplevert</h2>
+        <ul>
+          {dienst.oplevert.map((o) => <li>{o}</li>)}
+        </ul>
+
+        <h2>Wat er niet in zit</h2>
+        <ul>
+          {dienst.niet.map((n) => <li>{n}</li>)}
+        </ul>
+
+        <div class="answer-box">
+          <p>
+            <strong>Kort samengevat:</strong> {dienst.titel} bij Kwartel Studio betekent
+            {dienst.doorlooptijd} doorlooptijd, {dienst.investering} en een oplevering die je zelf kunt
+            testen. Je zit daarna niet vast: code, data en hostingtoegang gaan mee naar jou.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={dienst.faq} titel={`Vragen over ${dienst.titel}`} />
+
+  <CtaBand
+    titel={`${dienst.titel} nodig?`}
+    tekst="Bel of plan een gesprek. Je hoort binnen één werkdag of dit de juiste werkbon is, en wat het in jouw situatie zou kosten."
+  />
+</Base>

@@ -1,0 +1,33 @@
+---
+import { CONTACT } from '../config';
+
+interface Props {
+  titel?: string;
+  tekst?: string;
+  knop?: string;
+  href?: string;
+}
+const {
+  titel = 'Eerst even kijken of het iets voor je is?',
+  tekst = 'Een gesprek van dertig minuten, bij jou op locatie of online. Je vertelt welk proces je het meest irriteert. Wij zeggen eerlijk of software daar iets aan kan doen — en zo niet, dan ook.',
+  knop = 'Plan een gesprek',
+  href = '/contact/',
+} = Astro.props;
+---
+
+<section class="cta-band">
+  <div class="container cta-band__grid">
+    <div>
+      <p class="eyebrow">Volgende stap</p>
+      <h2>{titel}</h2>
+      <p style="margin-top:1rem">{tekst}</p>
+    </div>
+    <div>
+      <div class="btn-row" style="margin-bottom:1.1rem">
+        <a class="btn btn--light" href={href}>{knop}<span class="btn__arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn--ghost" href={CONTACT.phoneHref} style="border-color:#4c6b5c;color:#e7eae4">Bel {CONTACT.phone}</a>
+      </div>
+      <p class="mono-label" style="color:#a8bfae">Reactie {CONTACT.responseTime} · geen acquisitiegesprek</p>
+    </div>
+  </div>
+</section>

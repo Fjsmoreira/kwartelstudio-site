@@ -1,0 +1,43 @@
+---
+interface Props {
+  code: string;
+  titel: string;
+  beschrijving: string;
+  voorWie: string;
+  doorlooptijd: string;
+  investering: string;
+  href: string;
+  stamp?: string;
+  tilt?: boolean;
+  linkLabel?: string;
+}
+
+const {
+  code,
+  titel,
+  beschrijving,
+  voorWie,
+  doorlooptijd,
+  investering,
+  href,
+  stamp = 'Vaste prijs',
+  tilt = false,
+  linkLabel = 'Bekijk deze werkbon',
+} = Astro.props;
+---
+
+<article class:list={['werkbon', tilt && 'werkbon--tilt']}>
+  <div class="werkbon__perf" aria-hidden="true"></div>
+  <div class="werkbon__top">
+    <span class="werkbon__code">{code}</span>
+    <span class="werkbon__stamp">{stamp}</span>
+  </div>
+  <h3>{titel}</h3>
+  <p class="werkbon__desc">{beschrijving}</p>
+  <dl class="werkbon__specs">
+    <div><dt>Voor wie</dt><dd>{voorWie}</dd></div>
+    <div><dt>Doorlooptijd</dt><dd>{doorlooptijd}</dd></div>
+    <div><dt>Investering</dt><dd>{investering}</dd></div>
+  </dl>
+  <a class="text-link" href={href}>{linkLabel} <span aria-hidden="true">→</span></a>
+</article>

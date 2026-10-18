@@ -1,0 +1,67 @@
+---
+import Base from '../../layouts/Base.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { ARTIKELEN } from '../../lib/artikelen';
+import { organisation, webPage, breadcrumbSchema } from '../../lib/schema';
+
+const titel = 'Kennisbank: AI voor het mkb, zonder jargon';
+const omschrijving =
+  'Artikelen over AI in het mkb: wat het kost, wat de AVG toestaat, welke toepassingen zich terugverdienen en welk type assistent je nodig hebt.';
+
+const schemas = [
+  organisation(),
+  webPage('/kennisbank/', titel, omschrijving),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: titel,
+    url: 'https://kwartelstudio.nl/kennisbank/',
+    hasPart: ARTIKELEN.map((a) => ({
+      '@type': 'Article',
+      headline: a.titel,
+      url: `https://kwartelstudio.nl/kennisbank/${a.slug}/`,
+      datePublished: a.datum,
+    })),
+  },
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Kennisbank', pad: '/kennisbank/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/kennisbank/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Kennisbank</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Kennisbank</p>
+    <h1>Alles wat we opschrijven, zonder verkooppraatje.</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Wij schrijven alleen over dingen die we zelf bouwen. Geen trends, geen toekomstvoorspellingen,
+      wel prijzen, valkuilen en wat er in de wet staat.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:1.4rem">
+        {ARTIKELEN.map((a) => (
+          <article class="card">
+            <span class="tag">{a.onderwerp}</span>
+            <h2 style="font-size:1.25rem;line-height:1.2">
+              <a href={`/kennisbank/${a.slug}/`} style="text-decoration:none;color:var(--ink)">{a.titel}</a>
+            </h2>
+            <p style="font-size:0.95rem">{a.omschrijving}</p>
+            <div class="card__foot">
+              <span class="mono-label">{a.leestijd} min lezen</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    titel="Vraag staat er niet bij?"
+    tekst="Stuur hem op. Als de vraag vaker terugkomt, schrijven we er een artikel over — en tot die tijd krijg je gewoon antwoord."
+  />
+</Base>

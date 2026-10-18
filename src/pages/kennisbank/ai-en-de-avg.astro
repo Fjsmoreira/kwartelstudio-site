@@ -1,0 +1,159 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Mag ik ChatGPT gebruiken met klantgegevens?',
+    a: 'Alleen als je dat bewust doet en het klopt met je privacyverklaring. Zet in de instellingen het gebruik van je gegevens voor training uit, gebruik bij voorkeur een zakelijk account met een verwerkersovereenkomst, en plak geen bijzondere persoonsgegevens zoals medische informatie in een publieke chat.',
+  },
+  {
+    q: 'Heb ik een DPIA nodig voor een AI-toepassing?',
+    a: 'Niet altijd. Een DPIA is verplicht bij waarschijnlijk hoog risico, bijvoorbeeld bij systematische beoordeling van mensen, gezondheidsgegevens of grootschalige monitoring. Voor een assistent die offertes opstelt is het meestal niet nodig; voor een systeem dat sollicitanten voorselecteert wel.',
+  },
+  {
+    q: 'Wat verandert de AI Act voor mijn bedrijf?',
+    a: 'Voor de meeste mkb-toepassingen weinig: die vallen in de categorie beperkt risico. Wel moet je transparant zijn als mensen met een AI-systeem praten, en zijn er strengere regels voor hoog-risicotoepassingen zoals werving, kredietverstrekking en medische software.',
+  },
+  {
+    q: 'Moet mijn AI-leverancier in Nederland zitten?',
+    a: 'Nee, maar het maakt het eenvoudiger. Buiten de EU moet je een geldige doorgiftegrondslag hebben en vaak aanvullende maatregelen treffen. Wij hosten standaard in Nederland of Duitsland en sluiten een verwerkersovereenkomst, zodat je daar geen aparte afweging voor hoeft te maken.',
+  },
+  {
+    q: 'Wie is verantwoordelijk als de AI een fout maakt?',
+    a: 'Jij, als verwerkingsverantwoordelijke. De leverancier is verwerker en moet technische en organisatorische maatregelen nemen, maar de verantwoordelijkheid voor het proces en het besluit blijft bij jouw bedrijf. Daarom bouwen wij waar het gevoelig is met een mens in de controle.',
+  },
+];
+---
+
+<Artikel
+  titel="AI en de AVG: wat mag je als mkb-bedrijf wel en niet?"
+  omschrijving="AI en de AVG in de praktijk: welke grondslag je nodig hebt, wanneer een verwerkersovereenkomst verplicht is, wat de AI Act verandert en hoe je gevoelige dossiers veilig verwerkt."
+  slug="ai-en-de-avg"
+  datum="2026-10-18"
+  leestijd={9}
+  onderwerp="Privacy"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> je mag als mkb-bedrijf AI gebruiken met persoonsgegevens,
+      zolang je een geldige grondslag hebt, transparant bent in je privacyverklaring, een
+      verwerkersovereenkomst sluit met je leverancier en geen bijzondere persoonsgegevens
+      verwerkt zonder aparte basis. Voor hoog-risicotoepassingen — werving, krediet, gezondheid —
+      gelden zwaardere eisen.
+    </p>
+  </div>
+
+  <p>
+    De AVG is technologie-neutraal: hij zegt niets over AI, alleen over persoonsgegevens. Dat
+    maakt de regels niet ingewikkeld, maar wel abstract. Hieronder staat wat het concreet
+    betekent als je een AI-toepassing wilt laten bouwen of een bestaande tool wilt gebruiken.
+  </p>
+
+  <h2>1. Bepaal eerst of er persoonsgegevens in het spel zijn</h2>
+  <p>
+    Verwerk je namen, e-mailadressen, bestelgegevens, dossierinformatie of camerabeelden? Dan is
+    de AVG van toepassing. Gaat het alleen om anonieme voorraadcijfers of om een model dat
+    productteksten schrijft zonder klantgegevens? Dan is het vaak eenvoudiger — al blijft de vraag
+    of je gegevens door een leverancier worden gebruikt voor training.
+  </p>
+  <p>
+    Praktisch: maak een lijstje van de velden die de toepassing raakt. Als daar iets in staat dat
+    een persoon identificeert, geldt de rest van dit artikel.
+  </p>
+
+  <h2>2. Kies een grondslag en leg hem vast</h2>
+  <p>
+    Je hebt één van de zes grondslagen nodig. In het mkb zijn dit de gebruikelijke:
+  </p>
+  <ul>
+    <li><strong>Uitvoering van een overeenkomst</strong> — je verwerkt gegevens om een order, reservering of opdracht uit te voeren. Dit dekt veel order- en offerteprocessen.</li>
+    <li><strong>Gerechtvaardigd belang</strong> — bijvoorbeeld fraudepreventie of het beveiligen van je systemen. Je moet dit wel kunnen onderbouwen met een belangenafweging.</li>
+    <li><strong>Toestemming</strong> — nodig voor dingen die de klant zelf moet kunnen weigeren, zoals marketingmails of het gebruik van foto’s. Toestemming moet vrij, specifiek en intrekbaar zijn.</li>
+    <li><strong>Wettelijke verplichting</strong> — bijvoorbeeld bewaartermijnen in de boekhouding of de zorg.</li>
+  </ul>
+  <p>
+    Leg de grondslag vast in je verwerkingsregister. Dat register is verplicht zodra je
+    regelmatig persoonsgegevens verwerkt, en het is het eerste dat een toezichthouder opvraagt.
+  </p>
+
+  <h2>3. Sluit een verwerkersovereenkomst met je leverancier</h2>
+  <p>
+    Zodra een partij persoonsgegevens voor jou verwerkt, heb je een verwerkersovereenkomst nodig
+    (artikel 28 AVG). Dat geldt voor je AI-leverancier, je hostingpartij en je e-mailprovider. De
+    overeenkomst regelt wat de verwerker mag doen, hoe hij beveiligt, welke subverwerkers hij
+    gebruikt en wat er bij een datalek gebeurt.
+  </p>
+  <p>
+    Let op twee dingen die vaak ontbreken: een lijst met subverwerkers (in de AI-wereld zijn dat
+    vaak Amerikaanse modelaanbieders) en de afspraak dat jouw gegevens niet worden gebruikt om
+    modellen te trainen.
+  </p>
+
+  <h2>4. Doorgifte buiten de EU</h2>
+  <p>
+    De meeste taalmodel-API’s draaien in de Verenigde Staten. Doorgifte is toegestaan als er een
+    geldige grondslag is, bijvoorbeeld het EU-VS Data Privacy Framework of standaardcontract-
+    bepalingen met een aanvullende risicoanalyse. In de praktijk is dat voor veel mkb-bedrijven
+    een papierwinkel die niemand leest.
+  </p>
+  <p>
+    Onze keuze is eenvoudiger: standaard Europese hosting en Europese modelaanbieders waar dat
+    kan. Voor dossiers met gezondheids- of cliëntgegevens draaien we een open model binnen onze
+    eigen omgeving, zodat er geen persoonsgegevens de EU verlaten.
+  </p>
+
+  <h2>5. Wanneer je een DPIA moet doen</h2>
+  <p>
+    Een gegevensbeschermingseffectbeoordeling is verplicht bij waarschijnlijk hoog risico. Denk
+    aan systematische en uitgebreide beoordeling van persoonlijke aspecten, geautomatiseerde
+    besluitvorming met rechtsgevolgen, grootschalige verwerking van bijzondere gegevens of
+    systematische monitoring van een publieke ruimte.
+  </p>
+  <p>
+    Een assistent die offertes opstelt: nee. Een systeem dat cv’s rangschikt en kandidaten
+    afwijst: ja. Een tool die medische consulten samenvat: meestal ja, vanwege de aard van de
+    gegevens.
+  </p>
+
+  <h2>6. Wat de AI Act verandert</h2>
+  <p>
+    De Europese AI-verordening werkt met risiconiveaus:
+  </p>
+  <ul>
+    <li><strong>Verboden</strong> — sociale scoring, manipulatieve technieken, ongerichte gezichtsherkenning uit camera’s. Niet doen.</li>
+    <li><strong>Hoog risico</strong> — onder meer werving, kredietbeoordeling, toegang tot onderwijs, medische hulpmiddelen en kritieke infrastructuur. Hier gelden eisen aan risicobeheer, documentatie en menselijk toezicht.</li>
+    <li><strong>Beperkt risico</strong> — chatbots en generatieve toepassingen. Vooral transparantie: mensen moeten weten dat ze met een systeem praten en AI-gegenereerde content moet herkenbaar zijn.</li>
+    <li><strong>Minimaal risico</strong> — spamfilters, aanbevelingen, de meeste interne automatisering.</li>
+  </ul>
+  <p>
+   Voor vrijwel alle toepassingen die wij voor het mkb bouwen geldt het niveau beperkt of
+    minimaal risico. Dat betekent niet dat er niets moet: je moet kunnen uitleggen wat het systeem
+    doet en waar een mens meekijkt.
+  </p>
+
+  <h2>Een checklist voor je eerste AI-toepassing</h2>
+  <ol>
+    <li>Welke persoonsgegevens raakt de toepassing, en waarom?</li>
+    <li>Welke grondslag geldt per verwerking?</li>
+    <li>Staat de verwerking in je verwerkingsregister?</li>
+    <li>Heb je een verwerkersovereenkomst met elke partij die gegevens ziet?</li>
+    <li>Vermeldt je privacyverklaring het gebruik van AI, in begrijpelijke taal?</li>
+    <li>Is er een mens die controleert voordat er iets onomkeerbaars gebeurt?</li>
+    <li>Hoe lang worden gegevens bewaard, en wie verwijdert ze?</li>
+    <li>Wat gebeurt er bij een datalek, en wie meldt het binnen 72 uur?</li>
+  </ol>
+
+  <h2>Wat wij standaard regelen</h2>
+  <p>
+    Bij elke opdracht waarbij persoonsgegevens in het spel zijn, krijg je een
+    verwerkersovereenkomst, een overzicht van de verwerkingen en een verwijzing naar de
+    bewaartermijnen. Bij gevoelige dossiers bouwen we met een lokaal model en logs die na dertig
+    dagen automatisch verdwijnen. Kost iets meer, maar het scheelt je een gesprek met je
+    accountant, je verzekeraar en uiteindelijk de Autoriteit Persoonsgegevens.
+  </p>
+  <p>
+    Dit is geen juridisch advies. Twijfel je over je eigen situatie? Laat een jurist of je
+    functionaris gegevensbescherming meekijken — wij leveren de technische onderbouwing aan.
+  </p>
+</Artikel>

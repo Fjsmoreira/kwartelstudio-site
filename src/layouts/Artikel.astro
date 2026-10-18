@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { ARTIKELEN } from '../lib/artikelen';
+import { organisation, artikelSchema, faqSchema, breadcrumbSchema, webPage } from '../lib/schema';
+
+interface Props {
+  titel: string;
+  h1?: string;
+  omschrijving: string;
+  slug: string;
+  datum: string;
+  gewijzigd?: string;
+  leestijd: number;
+  onderwerp: string;
+  faq: { q: string; a: string }[];
+}
+
+const { titel, h1, omschrijving, slug, datum, gewijzigd, leestijd, onderwerp, faq } = Astro.props;
+const pad = `/kennisbank/${slug}/`;
+const datumNL = new Date(datum).toLocaleDateString('nl-NL', { day: 'numeric', month: 'long', year: 'numeric' });
+
+const schemas = [
+  organisation(),
+  webPage(pad, titel, omschrijving),
+  artikelSchema({ titel, omschrijving, pad, datum, gewijzigd }),
+  faqSchema(faq),
+  breadcrumbSchema([
+    { naam: 'Home', pad: '/' },
+    { naam: 'Kennisbank', pad: '/kennisbank/' },
+    { naam: onderwerp, pad },
+  ]),
+];
+
+const gerelateerd = ARTIKELEN.filter((a) => a.slug !== slug).slice(0, 2);
+---
+
+<Base title={titel} description={omschrijving} path={pad} schemas={schemas} ogType="article">
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li><a href="/kennisbank/">Kennisbank</a></li>
+      <li>{onderwerp}</li>
+    </ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">{onderwerp} · Kennisbank</p>
+    <h1>{h1 ?? titel}</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:56ch">{omschrijving}</p>
+    <div class="article-meta">
+      <span>{datumNL}</span>
+      <span>{leestijd} minuten lezen</span>
+      <span>Kwartel Studio, Laren</span>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <article class="prose" style="margin-inline:auto">
+        <slot />
+      </article>
+
+      <div style="max-width:68ch;margin:2.5rem auto 0">
+        <div class="answer-box">
+          <p>
+            <strong>Meer weten over jouw situatie?</strong> Bel
+            <a href="tel:+31631683221">+31 6 31683221</a> of plan een gesprek. Een eerste
+            inschatting is gratis en duurt een half uur.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} titel="Vragen over dit onderwerp" />
+
+  <section class="section section--tight">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Verder lezen</p>
+        <h2 style="font-size:1.5rem">Nog twee artikelen.</h2>
+      </div>
+      <div class="grid-2">
+        {gerelateerd.map((a) => (
+          <article class="card">
+            <span class="tag">{a.onderwerp}</span>
+            <h3 style="font-size:1.12rem"><a href={`/kennisbank/${a.slug}/`} style="text-decoration:none;color:var(--ink)">{a.titel}</a></h3>
+            <p style="font-size:0.93rem">{a.omschrijving}</p>
+            <div class="card__foot"><span class="mono-label">{a.leestijd} min lezen</span></div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

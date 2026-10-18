@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { CONTACT, SITE } from '../config';
+import { organisation, webPage, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Over ons: een kleine AI-studio in Laren';
+const omschrijving =
+  'Kwartel Studio is een kleine AI- en softwarestudio aan De Kwartel in Laren. We bouwen voor mkb-bedrijven in Het Gooi, met vaste prijzen en zonder hype.';
+
+const schemas = [
+  organisation(),
+  webPage('/over/', titel, omschrijving),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Over ons', pad: '/over/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/over/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Over ons</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Over Kwartel Studio</p>
+    <h1>Een studio van drie werkbanken en één overtuiging.</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Wij geloven niet dat elk bedrijf een AI-afdeling nodig heeft. Wij geloven dat elk bedrijf één
+      proces heeft dat te veel tijd kost — en dat je daar kunt beginnen.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Waarom deze naam</p>
+        <h2>Aan De Kwartel in Laren.</h2>
+      </div>
+      <div class="prose">
+        <p>
+          Kwartel Studio zit aan De Kwartel 13 in Laren. De naam is geen marketingvondst: het is
+          gewoon de straat. Dat past bij hoe we werken — geen verzonnen positionering, wel een
+          duidelijke plek en een duidelijk verhaal.
+        </p>
+        <p>
+          Wij werken voor bedrijven in Het Gooi die geen eigen IT-afdeling hebben: de bakker met
+          drie vestigingen, de praktijk met acht medewerkers, de installateur met veertig
+          opdrachten per maand. Bedrijven waar de mensen het werk doen en de systemen dat werk
+          vooral in de weg zitten.
+        </p>
+        <h2>Waarom niet gewoon een groot bureau</h2>
+        <p>
+          Een groot bureau is niet slecht, maar wel duur en traag voor een bedrijf van vijftien
+          mensen. Er zit een laag tussen jou en de bouwer, er wordt met een team gewerkt waar een
+          klein project geen prioriteit heeft, en de offerte begint vaak bij € 25.000.
+        </p>
+        <p>
+          Wij doen het omgekeerde: één aanspreekpunt dat ook bouwt, een kleine scope, een vaste
+          prijs en een eerste resultaat binnen twee weken. Is de opdracht groter dan wij
+          aankunnen, dan zeggen we dat en verwijzen we door. Liever een klein project dat slaagt
+          dan een groot project dat half af is.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Wie je spreekt</p>
+        <h2>Fernando Moreira, oprichter.</h2>
+        <p style="margin-top:1rem;font-size:0.95rem">
+          Je spreekt tijdens het hele traject dezelfde persoon. Geen accountmanager, geen
+          doorverwijzing naar een team dat je nooit ziet.
+        </p>
+        <ul class="contact-list" style="margin-top:1.4rem">
+          <li><span>Telefoon</span><a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
+          <li><span>E-mail</span><a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a></li>
+          <li><span>Adres</span>{CONTACT.street}, {CONTACT.postcode} {CONTACT.city}</li>
+        </ul>
+      </div>
+      <div class="prose" style="max-width:none">
+        <p>
+          Kwartel Studio is opgericht door Fernando Moreira, die naast software ook een eigen
+          horecabedrijf runt. Daardoor kennen we beide kanten: de techniek en de werkvloer waar de
+          systemen moeten werken. We bouwen geen demo’s voor een investeerder, maar gereedschap
+          voor mensen die om zeven uur ’s ochtends beginnen.
+        </p>
+        <p>
+          Voor grotere opdrachten werken we met een vaste kring van specialisten: een
+          interface-ontwerper, een ontwikkelaar en een partij voor hosting en beveiliging. Zij
+          komen pas in beeld als de opdracht daarom vraagt, niet standaard op de factuur.
+        </p>
+        <h2>Waar we goed in zijn</h2>
+        <ul>
+          <li>Processen vertalen naar software die mensen vrijwillig gebruiken.</li>
+          <li>Koppelingen met de systemen die er al staan, in plaats van ze te vervangen.</li>
+          <li>Kleine, afgebakende projecten die binnen weken iets opleveren.</li>
+          <li>Eerlijk zijn over wat niet kan — ook als dat een opdracht kost.</li>
+        </ul>
+        <h2>Waar we niet voor bellen</h2>
+        <p>
+          Wij benaderen geen bedrijven met koude acquisitie en sturen geen nieuwsbrieven die
+          niemand leest. Wie hier terechtkomt, komt via een verwijzing, een zoekopdracht of omdat
+          iemand onze naam noemde. Dat houdt de studio klein en het werk goed.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Uitgangspunten</p>
+        <h2>Vier dingen die niet onderhandelbaar zijn.</h2>
+      </div>
+      <ol class="principles">
+        <li><span><strong>De klant is eigenaar.</strong> Code, data en toegang zijn van jou. Bij oplevering, niet na een betaling van een afkoopsom.</span></li>
+        <li><span><strong>Geen verrassingen op de factuur.</strong> Een vaste prijs per fase, en meerwerk pas na akkoord op een schatting.</span></li>
+        <li><span><strong>Privacy is geen bijlage.</strong> Europese hosting, verwerkersovereenkomst en bij gevoelige dossiers een model dat lokaal draait.</span></li>
+        <li><span><strong>Klein blijven.</strong> Wij nemen niet meer opdrachten aan dan we zelf kunnen doen. Een wachtlijst is eerlijker dan een slechte oplevering.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <CtaBand
+    titel="Kom langs in Laren."
+    tekst="Je bent welkom aan De Kwartel 13. Koffie staat klaar, en je ziet meteen waar de studio zit — geen aparte vergaderruimte in een anoniem kantoorpark."
+    knop="Maak een afspraak"
+  />
+</Base>

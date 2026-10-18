@@ -1,0 +1,63 @@
+---
+import { SITE, CONTACT, AREA } from '../config';
+const jaar = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="brand" href="/" style="color:#f3f4ef">
+          <svg class="brand__mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <rect width="32" height="32" rx="2" fill="#f3f4ef"></rect>
+            <path d="M10 8.5v15h3.4v-4.9l1.9-2 4.2 6.9h4L17.3 14l5.6-5.5h-4.3L13.4 14V8.5z" fill="#14342b"></path>
+            <circle cx="24.4" cy="7.6" r="2.1" fill="#f2c230"></circle>
+          </svg>
+          <span><span class="brand__name" style="color:#f3f4ef">Kwartel Studio</span></span>
+        </a>
+        <p class="footer__brand" style="margin-top:1rem">
+          AI-implementatie en app-ontwikkeling voor mkb-bedrijven. Gebouwd in Laren, voor heel Het Gooi.
+        </p>
+      </div>
+
+      <div>
+        <h3>Diensten</h3>
+        <ul class="footer__list">
+          <li><a href="/diensten/ai-implementatie/">AI-implementatie</a></li>
+          <li><a href="/diensten/app-ontwikkeling/">App-ontwikkeling</a></li>
+          <li><a href="/diensten/onderhoud-en-beheer/">Onderhoud &amp; beheer</a></li>
+          <li><a href="/prijzen/">Tarieven</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Studio</h3>
+        <ul class="footer__list">
+          <li><a href="/over/">Over ons</a></li>
+          <li><a href="/werkwijze/">Werkwijze</a></li>
+          <li><a href="/voorbeelden/">Voorbeelden</a></li>
+          <li><a href="/kennisbank/">Kennisbank</a></li>
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Bezoek &amp; contact</h3>
+        <address style="font-style:normal;font-size:0.92rem;line-height:1.7">
+          {CONTACT.street}<br />
+          {CONTACT.postcode} {CONTACT.city}<br />
+          <a href={CONTACT.phoneHref}>{CONTACT.phone}</a><br />
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <span>© {jaar} {SITE.legalName}{CONTACT.kvk ? ` · KvK ${CONTACT.kvk}` : ''}{CONTACT.btw ? ` · BTW ${CONTACT.btw}` : ''}</span>
+      <span>Werkgebied: {AREA.slice(0, 6).join(' · ')}</span>
+      <span>
+        <a href="/privacy/">Privacy</a> · <a href="/voorwaarden/">Voorwaarden</a> · <a href="/llms.txt">llms.txt</a>
+      </span>
+    </div>
+  </div>
+</footer>

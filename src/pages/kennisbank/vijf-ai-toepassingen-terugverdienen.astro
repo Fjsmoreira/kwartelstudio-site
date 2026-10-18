@@ -1,0 +1,168 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Wat levert de snelste terugverdientijd op in een mkb-bedrijf?',
+    a: 'Order- en factuurinvoer, offertes en het afvangen van terugkerende klantvragen. Dat zijn processen met hoog volume, weinig variatie en een duidelijke foutkans — precies waar automatisering het snelst rendeert.',
+  },
+  {
+    q: 'Hoe bereken ik de terugverdientijd?',
+    a: 'Tel de uren die het proces nu kost, vermenigvuldig met het uurtarief inclusief werkgeverslasten, en deel de projectprijs door de maandelijkse besparing. Vergeet de foutkosten niet: een verkeerde order kost meer dan de invoertijd.',
+  },
+  {
+    q: 'Wat als mijn proces te veel varieert?',
+    a: 'Dan is volledige automatisering niet verstandig. Kies dan de variant waarbij een mens een voorstel controleert in plaats van zelf te typen. Dat levert meestal 60 tot 80 procent van de tijdwinst op, met een fractie van het risico.',
+  },
+];
+---
+
+<Artikel
+  titel="Vijf AI-toepassingen die zich binnen drie maanden terugverdienen"
+  omschrijving="Vijf AI-toepassingen voor het mkb met realistische terugverdientijd: orderinvoer, offertes, klantvragen, verslaglegging en planning. Met uren, kosten en rekenvoorbeeld."
+  slug="vijf-ai-toepassingen-terugverdienen"
+  datum="2026-10-18"
+  leestijd={8}
+  onderwerp="Toepassingen"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> de vijf toepassingen die zich in het mkb het snelst
+      terugverdienen zijn order- en factuurinvoer, offertegeneratie, het afvangen van terugkerende
+      klantvragen, verslaglegging na een gesprek of bezoek, en het herplannen van werk. Alle vijf
+      vervangen typewerk met een vaste vorm, en alle vijf zijn binnen drie tot vijf maanden terug
+      verdiend bij een besparing van vier tot acht uur per week.
+    </p>
+  </div>
+
+  <p>
+    De verleiding bij AI is om te beginnen bij wat technisch indrukwekkend is. De praktijk is
+    omgekeerd: hoe saaier het proces, hoe sneller het zich terugverdient. Hieronder staan vijf
+    toepassingen met een realistische schatting. De uurtarieven gaan uit van € 35 tot € 45 per uur
+    inclusief werkgeverslasten — reken met je eigen getal.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Toepassing</th><th>Besparing</th><th>Project</th><th>Terugverdiend</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Order- en factuurinvoer</td><td>5–8 uur per week</td><td>€ 4.500</td><td>3–5 maanden</td></tr>
+      <tr><td>Offertes opstellen</td><td>3–5 uur per week</td><td>€ 4.950</td><td>3–6 maanden</td></tr>
+      <tr><td>Klantvragen afvangen</td><td>3–6 uur per week</td><td>€ 3.950</td><td>3–5 maanden</td></tr>
+      <tr><td>Verslaglegging</td><td>4–6 uur per week</td><td>€ 5.500</td><td>4–6 maanden</td></tr>
+      <tr><td>Planning en herplanning</td><td>3–5 uur per week</td><td>€ 7.500</td><td>5–8 maanden</td></tr>
+    </tbody>
+  </table>
+
+  <h2>1. Order- en factuurinvoer</h2>
+  <p>
+    <strong>Het proces.</strong> Een orderbevestiging, inkoopfactuur of pakbon komt binnen als pdf
+    of e-mail en wordt overgetypt in het boekhoud- of voorraadsysteem.
+  </p>
+  <p>
+    <strong>Wat de software doet.</strong> Leest het document, haalt leverancier, artikelnummers,
+    aantallen en prijzen eruit, matcht die met je artikelbestand en zet de order klaar. Alleen
+    regels die niet matchen komen bij een medewerker terecht.
+  </p>
+  <p>
+    <strong>Waarom het snel terugverdient.</strong> Hoog volume, vaste vorm en een direct meetbare
+    foutkans. Bij een groothandel met vijftig orderbevestigingen per week is dit vaak het eerste
+    project dat zichzelf betaalt.
+  </p>
+  <p>
+    <strong>Waar het misgaat.</strong> Als artikelnummers van leveranciers niet overeenkomen met je
+    eigen artikelbestand. Reken een dag extra voor het opzetten van een koppeltabel.
+  </p>
+
+  <h2>2. Offertes opstellen</h2>
+  <p>
+    <strong>Het proces.</strong> Een klant vraagt om een prijs, iemand zoekt de juiste regels bij
+    elkaar, typt een begeleidende tekst en maakt er een pdf van.
+  </p>
+  <p>
+    <strong>Wat de software doet.</strong> Stelt op basis van een korte invoer — foto, spraaknotitie
+    of een lijst gekozen werkzaamheden — een complete offerte samen uit je eigen prijslijst, in je
+    eigen huisstijl, met de juiste teksten en voorwaarden.
+  </p>
+  <p>
+    <strong>Waarom het snel terugverdient.</strong> De tijdwinst zit niet alleen in het typen, maar
+    in de doorlooptijd: een offerte die dezelfde dag terugkomt, wint vaker dan een offerte die drie
+    dagen later komt.
+  </p>
+  <p>
+    <strong>Waar het misgaat.</strong> Als de prijslijst niet actueel is. Dan produceert de tool
+    snel verkeerde offertes. Koppel hem aan één bron en houd die bij.
+  </p>
+
+  <h2>3. Klantvragen afvangen</h2>
+  <p>
+    <strong>Het proces.</strong> Dezelfde vragen over openingstijden, levertijd, parkeren, garantie
+    en beschikbaarheid komen per telefoon, e-mail en WhatsApp binnen.
+  </p>
+  <p>
+    <strong>Wat de software doet.</strong> Beantwoordt de standaardvragen op basis van je eigen
+    informatie, met een link naar de juiste pagina, en draagt complexe vragen over aan een mens met
+    een korte samenvatting van het gesprek.
+  </p>
+  <p>
+    <strong>Waarom het snel terugverdient.</strong> Elke afgevangen vraag is een onderbreking
+    minder. Bij een bedrijf met vier tot zes uur per week aan baliewerk is de rekensom snel rond.
+  </p>
+  <p>
+    <strong>Waar het misgaat.</strong> Een assistent die antwoorden verzint. Daarom bouwen we met
+    bronvermelding en een vaste grens: geen bron, geen antwoord.
+  </p>
+
+  <h2>4. Verslaglegging na een gesprek of bezoek</h2>
+  <p>
+    <strong>Het proces.</strong> Na een consult, intake of inspectie typt iemand een verslag in het
+    dossier, vaak aan het eind van de dag.
+  </p>
+  <p>
+    <strong>Wat de software doet.</strong> Maakt van een spraakopname of steekwoorden een
+    gestructureerd verslag volgens je eigen velden en richtlijnen, met een duidelijke markering waar
+    een professional moet controleren en aanvullen.
+  </p>
+  <p>
+    <strong>Waarom het snel terugverdient.</strong> Administratietijd na werktijd is duur en
+    demotiverend. Vier uur per week minder overwerk is bij een praktijk vaak de helft van de
+    projectprijs per jaar.
+  </p>
+  <p>
+    <strong>Waar het misgaat.</strong> Gevoelige gegevens naar een Amerikaanse API sturen. Dit vraagt
+    om Europese hosting of een lokaal model, en om een verwerkersovereenkomst die klopt.
+  </p>
+
+  <h2>5. Planning en herplanning</h2>
+  <p>
+    <strong>Het proces.</strong> Monteurs, bezorgers of behandelaars worden ingepland; bij uitval of
+    spoed wordt de planning met de hand omgegooid.
+  </p>
+  <p>
+    <strong>Wat de software doet.</strong> Stelt een planning voor op basis van reistijd,
+    vaardigheden, contractafspraken en urgentie, en toont bij uitval drie alternatieven. De planner
+    beslist, de tool rekent.
+  </p>
+  <p>
+    <strong>Waarom het zich terugverdient.</strong> Minder kilometers, minder overwerk en minder
+    lege uren. Dit is wel het duurste project van de vijf, omdat de regels per bedrijf verschillen.
+  </p>
+  <p>
+    <strong>Waar het misgaat.</strong> Volledig automatisch plannen zonder menselijke controle. De
+    planner moet altijd de laatste stem hebben, anders vertrouwt niemand het systeem.
+  </p>
+
+  <h2>Welke je als eerste moet doen</h2>
+  <p>
+    Kies degene met het hoogste volume en de laagste variatie. Dat is bijna altijd order- of
+    factuurinvoer, daarna offertes. Klantvragen zijn de zichtbaarste quick win omdat je klant het
+    meteen merkt, maar ze leveren meestal minder uren op dan een goed ingerichte orderpijplijn.
+  </p>
+  <p>
+    En meet het vooraf. Niet schatten, maar een week lang turven: hoe vaak, hoe lang, hoeveel
+    fouten. Zonder die nulmeting kun je na drie maanden niet aantonen dat het werkte — en dan
+    verdwijnt de tool in de la omdat niemand het verschil ziet.
+  </p>
+</Artikel>

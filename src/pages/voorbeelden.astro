@@ -1,0 +1,146 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { organisation, webPage, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Voorbeelden: wat wij bouwen voor het mkb';
+const omschrijving =
+  'Tien concrete voorbeelden van AI-toepassingen en apps voor mkb-bedrijven: van intake-assistenten en offertegeneratoren tot voorraadvoorspelling en WhatsApp-reserveringen.';
+
+const cases = [
+  {
+    sector: 'Zorg & praktijken',
+    titel: 'Intake-assistent voor een tandartspraktijk',
+    probleem: 'De balie typt per nieuwe patiënt vijftien minuten aan antwoorden over, en de agenda loopt vast op no-shows.',
+    bouw: 'Patiënten vullen vooraf een korte intake in via een link. De assistent stelt doorvragen, maakt een gestructureerd verslag en zet de afspraak in de agenda. Twee dagen vooraf gaat er een herinnering uit met de mogelijkheid te verzetten.',
+    oplevert: 'Ongeveer vier uur baliewerk per week minder en minder lege stoelen.',
+    duur: '4 weken',
+  },
+  {
+    sector: 'Bouw & installatie',
+    titel: 'Van foto naar offerte',
+    probleem: 'Een installateur maakt ’s avonds offertes en is per stuk een uur kwijt aan overtypen uit WhatsApp en foto’s.',
+    bouw: 'Een app waarin de monteur een foto en een ingesproken notitie achterlaat. De assistent herkent materialen, vult de offerteregels uit de eigen prijslijst en produceert een pdf in de huisstijl. De monteur controleert en verstuurt.',
+    oplevert: 'Offertes dezelfde dag in plaats van binnen een week, en meer opdrachten die niet afhaken.',
+    duur: '5 weken',
+  },
+  {
+    sector: 'Horeca',
+    titel: 'WhatsApp-reserveringen zonder handwerk',
+    probleem: 'Reserveringen komen via WhatsApp, telefoon, Instagram en e-mail binnen, en belanden in drie verschillende schriften.',
+    bouw: 'Een WhatsApp-nummer dat reserveringen aanneemt in het Nederlands, Engels en Duits, beschikbaarheid controleert in het reserveringssysteem en bevestigt. Bij twijfel schakelt het door naar een mens.',
+    oplevert: 'Geen gemiste reserveringen buiten openingstijden en een rustiger telefoon.',
+    duur: '3 weken',
+  },
+  {
+    sector: 'Zakelijke dienstverlening',
+    titel: 'Assistent voor je eigen archief',
+    probleem: 'Adviseurs zoeken twintig minuten naar de juiste passage in een contract of eerder advies.',
+    bouw: 'Een doorzoekbare assistent bovenop het eigen archief die antwoord geeft met bronvermelding per alinea, inclusief het document en de datum. Geen antwoord zonder bron.',
+    oplevert: 'Sneller antwoord en minder afhankelijkheid van degene die alles al weet.',
+    duur: '6 weken',
+  },
+  {
+    sector: 'Retail & groothandel',
+    titel: 'Inkooporders die zichzelf invoeren',
+    probleem: 'Orderbevestigingen van leveranciers komen als pdf en worden met de hand overgetypt in het voorraadsysteem.',
+    bouw: 'Een pijplijn die pdf’s en e-mails uitleest, regels matcht met artikelnummers, afwijkingen markeert en de order klaarzet in het systeem. Alleen uitzonderingen komen bij een medewerker terecht.',
+    oplevert: 'Circa zes uur per week minder invoerwerk en minder fouten in de voorraad.',
+    duur: '5 weken',
+  },
+  {
+    sector: 'Makelaardij',
+    titel: 'Woningteksten in drie talen',
+    probleem: 'Elke woning heeft een tekst nodig, en dezelfde woning moet ook in het Engels en Duits online.',
+    bouw: 'Een tool waarin je foto’s en kenmerken invult; de assistent schrijft een tekst volgens de eigen toon, in drie talen, met de juiste vaste terminologie en zonder verzonnen details.',
+    oplevert: 'Een kwartier per woning in plaats van een uur, met consistentere teksten.',
+    duur: '3 weken',
+  },
+  {
+    sector: 'Horeca & hotels',
+    titel: 'Menukaart die meebeweegt met de voorraad',
+    probleem: 'Gerechten staan op de kaart terwijl de ingrediënten op zijn, en de keuken meldt dat pas bij de bestelling.',
+    bouw: 'Een koppeling tussen voorraad en menukaart: wat op is, gaat automatisch op “uitverkocht” op de website, de QR-kaart en de bezorgkanalen. Inkopen worden op basis van de bonnen bijgehouden.',
+    oplevert: 'Minder teleurstellingen aan tafel en minder verspilling.',
+    duur: '4 weken',
+  },
+  {
+    sector: 'Zorg & praktijken',
+    titel: 'Verslaglegging die de dokter alleen hoeft te controleren',
+    probleem: 'Na elk consult typt de behandelaar een verslag in het dossier, vaak aan het eind van een volle dag.',
+    bouw: 'Spraak naar gestructureerd verslag volgens de eigen richtlijnen, met vaste velden en een duidelijke markering waar de behandelaar moet controleren. Geen verslag zonder akkoord.',
+    oplevert: 'Administratie binnen de consulttijd in plaats van na sluitingstijd.',
+    duur: '6 weken',
+  },
+  {
+    sector: 'Bouw & installatie',
+    titel: 'Planning die zichzelf herplant',
+    probleem: 'Een monteur valt uit en de planning wordt met de hand omgegooid, met spoedklussen die alles verdringen.',
+    bouw: 'Een planningshulp die rekening houdt met reistijd, vaardigheden, contractafspraken en urgentie, en bij uitval drie alternatieven voorstelt. De planner beslist, de tool rekent.',
+    oplevert: 'Minder kilometers, minder overwerk en een planning die klopt met de werkelijkheid.',
+    duur: '8 weken',
+  },
+  {
+    sector: 'Zakelijke dienstverlening',
+    titel: 'Kennisbank die vragen van klanten afvangt',
+    probleem: 'Dezelfde vragen over tarieven, termijnen en procedures komen elke week opnieuw binnen.',
+    bouw: 'Een assistent op de website en in de mailbox die antwoordt op basis van de eigen veelgestelde vragen, met een link naar de juiste pagina en een nette overdracht naar een mens als het ingewikkeld wordt.',
+    oplevert: 'Minder onderbrekingen en antwoord buiten kantooruren.',
+    duur: '3 weken',
+  },
+];
+
+const schemas = [
+  organisation(),
+  webPage('/voorbeelden/', titel, omschrijving),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Voorbeelden', pad: '/voorbeelden/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/voorbeelden/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Voorbeelden</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Voorbeelden</p>
+    <h1>Tien dingen die wij bouwen, en wat ze opleveren.</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:54ch">
+      Alle onderstaande voorbeelden komen uit processen die we in het mkb tegenkomen. Klantnamen
+      noemen we pas als een klant daar toestemming voor geeft — liever geen logo’s dan een logo dat
+      niets zegt.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-2" style="gap:1.4rem">
+        {cases.map((c) => (
+          <article class="card" style="gap:0.5rem">
+            <span class="tag">{c.sector}</span>
+            <h3>{c.titel}</h3>
+            <p><strong style="font-weight:600">Het probleem.</strong> {c.probleem}</p>
+            <p><strong style="font-weight:600">Wat we bouwen.</strong> {c.bouw}</p>
+            <p style="border-left:2px solid var(--mark);padding-left:0.75rem;font-size:0.93rem;color:var(--ink)">
+              <strong style="font-weight:600">Wat het oplevert.</strong> {c.oplevert}
+            </p>
+            <div class="card__foot">
+              <span class="mono-label">Doorlooptijd · {c.duur}</span>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <p class="note">
+        Staat jouw proces er niet tussen? Dat zegt niets over de haalbaarheid. De meeste opdrachten
+        beginnen met een proces dat we nog niet eerder zagen — daarom duurt een eerste gesprek bij
+        ons ook een half uur en niet tien minuten.
+      </p>
+    </div>
+  </section>
+
+  <CtaBand
+    titel="Wat zou jij als eerste laten verdwijnen?"
+    tekst="Noem het proces dat je team het meest irriteert. Wij vertellen je binnen één gesprek of software het kan overnemen, wat dat kost en wat je ervoor terugkrijgt."
+  />
+</Base>

@@ -1,0 +1,140 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Wat kost een AI-implementatie voor een bedrijf met tien medewerkers?',
+    a: 'Reken op € 3.950 tot € 8.500 voor één werkend proces, inclusief koppeling en opleiding. Bij tien medewerkers is dat meestal orderinvoer, offertes of klantvragen. Onderhoud komt daarna op € 195 tot € 395 per maand.',
+  },
+  {
+    q: 'Waarom is een implementatie bij het ene bureau tien keer duurder?',
+    a: 'Vooral door het leveringsmodel: een bureau met een team van vijf mensen, een projectmanager en een specificatiefase rekent 300 uur waar een kleine studio 60 uur nodig heeft. Daarnaast maken koppelingen met verouderde systemen en slechte data het werk duur.',
+  },
+  {
+    q: 'Zijn er subsidies voor AI in het mkb?',
+    a: 'Ja, incidenteel. Denk aan de SLIM-regeling voor scholing en enkele provinciaanse innovatieregelingen. Landelijke subsidies voor AI-implementatie zijn beperkt en vaak gericht op onderzoek. Wij rekenen er niet op in een aanbieding, want een project dat alleen rondkomt met subsidie is geen goed project.',
+  },
+  {
+    q: 'Wat kost het als ik het zelf doe met ChatGPT?',
+    a: 'Een abonnement kost € 20 tot € 25 per maand, maar je betaalt met tijd: iemand moet de prompts onderhouden, de uitkomsten controleren en de koppeling met je systemen onderhouden. Dat werkt voor losse taken, niet voor een proces dat elke dag honderden keren moet kloppen.',
+  },
+];
+---
+
+<Artikel
+  titel="Wat kost AI-implementatie voor een mkb-bedrijf?"
+  omschrijving="Een AI-implementatie voor een mkb-bedrijf kost in 2026 tussen € 3.950 en € 25.000, afhankelijk van het aantal processen en koppelingen. Dit is waar de bedragen vandaan komen."
+  slug="wat-kost-ai-implementatie-mkb"
+  datum="2026-10-18"
+  leestijd={7}
+  onderwerp="Prijzen"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> een AI-implementatie voor een mkb-bedrijf kost in 2026
+      tussen € 3.950 en € 25.000. Een pilot met één proces zit rond € 4.000 tot € 6.500, een
+      volledige implementatie met meerdere koppelingen rond € 6.500 tot € 15.000, en een eigen app
+      of portaal vanaf € 9.500. Daarna betaal je € 195 tot € 750 per maand voor beheer.
+    </p>
+  </div>
+
+  <p>
+    De vraag “wat kost AI” is ongeveer net zo behulpzaam als “wat kost een verbouwing”. Het
+    antwoord hangt af van wat je wilt laten doen, hoe je systemen eruitzien en hoeveel er mis mag
+    gaan. Toch is er wel een bandbreedte, en die is kleiner dan veel bureaus doen voorkomen.
+  </p>
+
+  <h2>Wat je betaalt, per onderdeel</h2>
+
+  <table>
+    <thead>
+      <tr><th>Onderdeel</th><th>Wat het is</th><th>Bedrag</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Kansenkaart</td><td>Procesanalyse en businesscase, één week</td><td>€ 750 (verrekend bij opdracht)</td></tr>
+      <tr><td>Pilot</td><td>Eén proces werkend, één koppeling, opleiding</td><td>€ 3.950 – € 6.500</td></tr>
+      <tr><td>Implementatie</td><td>Meerdere processen of koppelingen, productiewaardig</td><td>€ 6.500 – € 15.000</td></tr>
+      <tr><td>App of portaal</td><td>Eigen applicatie met login en rollen</td><td>€ 9.500 – € 25.000</td></tr>
+      <tr><td>Onderhoud</td><td>Monitoring, updates, kleine wijzigingen</td><td>€ 195 – € 750 per maand</td></tr>
+      <tr><td>Hosting</td><td>Europese server, back-ups</td><td>€ 15 – € 40 per maand</td></tr>
+      <tr><td>Modelkosten</td><td>Verbruik van het taalmodel</td><td>€ 10 – € 150 per maand</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Die laatste twee posten zijn de enige die echt variabel zijn, en ze zijn zelden de reden dat
+    een project duur wordt. In de praktijk zit 85 tot 90 procent van de kosten in het werk van
+    mensen: proces uitzoeken, koppelingen bouwen, testen en uitleggen.
+  </p>
+
+  <h2>Waarom de verschillen zo groot zijn</h2>
+
+  <h3>1. Het aantal koppelingen</h3>
+  <p>
+    Een assistent die een e-mail leest en een concept antwoord maakt, is een klein project. Een
+    assistent die datzelfde doet en de gegevens wegschrijft in je boekhoudpakket, je voorraad
+    bijwerkt en een pdf in je huisstijl maakt, is drie keer zo groot. Elke koppeling heeft eigen
+    regels, eigen foutgevallen en eigen uitzonderingen. Vraag altijd hoeveel koppelingen er in
+    een prijs zitten, en wat een extra koppeling kost.
+  </p>
+
+  <h3>2. De kwaliteit van je data</h3>
+  <p>
+    AI is niet magisch: het werkt met wat er in je systemen staat. Artikelnummers die niet
+    kloppen, klantnamen die drie keer verschillend gespeld zijn, offertes in vijf verschillende
+    formats — dat moet eerst opgeruimd worden. Bij een bedrijf met een strak systeem kost dat een
+    dag, bij een bedrijf met twintig jaar aan losse Excel-bestanden twee weken.
+  </p>
+
+  <h3>3. Het leveringsmodel van de leverancier</h3>
+  <p>
+    Dit is de grootste factor. Een bureau met een team van vijf, een projectmanager en een
+    verplichte ontdekkingsfase rekent honderd tot driehonderd uur voor een eerste versie. Een
+    kleine studio met moderne tooling doet hetzelfde in zestig tot tachtig uur. Het verschil zit
+    niet in kwaliteit, maar in overhead: vergaderingen, overdrachten en mensen die op elkaar
+    wachten.
+  </p>
+
+  <h3>4. Hoeveel er mis mag gaan</h3>
+  <p>
+    Een interne tool die een concept-offerte maakt, mag fouten maken — een mens controleert. Een
+    tool die zelfstandig orders in een voorraadsysteem wegzet, mag dat niet. Die eis kost
+    logging, foutafhandeling, een noodrem en uitgebreid testen, en dat is vaak 30 tot 40 procent
+    van het budget.
+  </p>
+
+  <h2>Een rekenvoorbeeld dat je zelf kunt controleren</h2>
+  <p>
+    Stel: een groothandel typt elke week zes uur aan orderbevestigingen over. De medewerker kost
+    € 35 per uur aan werkgeverslasten. Dat is € 210 per week, ongeveer € 10.900 per jaar. Een
+    pilot van € 4.950 is dan in iets meer dan vijf maanden terugverdiend — nog zonder de fouten
+    die nu in de voorraad sluipen.
+  </p>
+  <p>
+    Dat is de rekensom die je moet maken, en die moet je maken vóórdat je een offerte accepteert.
+    Vraag een leverancier altijd om die som samen met jou in te vullen. Wie dat niet kan of wil,
+    verkoopt software in plaats van een oplossing.
+  </p>
+
+  <h2>Hoe je het klein houdt</h2>
+  <ul>
+    <li><strong>Begin met één proces.</strong> Niet met een afdeling, niet met een strategie. Eén proces, één eigenaar, één meetbaar resultaat.</li>
+    <li><strong>Kies het proces met volume.</strong> Iets dat twintig keer per dag gebeurt, levert meer op dan iets dat twee keer per maand langskomt.</li>
+    <li><strong>Vermijd koppelingen in ronde één.</strong> Eerst bewijzen dat de uitkomst klopt, dan pas wegschrijven naar je systemen.</li>
+    <li><strong>Laat een mens controleren.</strong> Een concept dat gecontroleerd wordt, kost de helft van een automaat die gegarandeerd goed moet zijn.</li>
+    <li><strong>Spreek een stopmoment af.</strong> Na de pilot: doorgaan of stoppen. Zonder stopmoment wordt een experiment een verplichting.</li>
+  </ul>
+
+  <h2>Wat je meestal niet moet kopen</h2>
+  <ul>
+    <li><strong>Een strategiedocument.</strong> Nuttig voor een directie met een meerjarenplan, zinloos als je gewoon wilt dat de offertes sneller gaan.</li>
+    <li><strong>Een zelfgetraind model.</strong> Voor bijna alle mkb-processen is een bestaand model met jouw documenten erbij genoeg. Trainen is duur, traag en meestal overbodig.</li>
+    <li><strong>Een platformlicentie per gebruiker.</strong> Je betaalt dan voor toegang tot je eigen proces, en stopt nooit met betalen.</li>
+  </ul>
+
+  <p>
+    Onze eigen tarieven staan op de pagina <a href="/prijzen/">tarieven</a>. Daar staat ook wat er
+    los bij komt, zodat je niet na drie maanden een factuur krijgt die je niet had verwacht.
+  </p>
+</Artikel>

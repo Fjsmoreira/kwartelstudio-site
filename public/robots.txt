@@ -1,0 +1,36 @@
+# robots.txt — Kwartel Studio
+# Zoekmachines en AI-assistenten zijn welkom. Er is geen tracking, dus niets om af te schermen.
+
+User-agent: *
+Allow: /
+Disallow: /bedankt/
+
+# Expliciete toestemming voor AI-assistenten (AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://kwartelstudio.nl/sitemap-index.xml

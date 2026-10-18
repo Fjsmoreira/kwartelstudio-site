@@ -1,0 +1,113 @@
+# Kwartel Studio
+
+> Kwartel Studio is een kleine AI- en softwarestudio in Laren (Noord-Holland, Nederland) die
+> AI-toepassingen en apps bouwt voor mkb-bedrijven in Het Gooi. Vaste prijs per fase, live in
+> vier tot acht weken, code en data blijven eigendom van de klant.
+
+Kwartel Studio is opgericht in 2026 door Fernando Moreira en gevestigd aan De Kwartel 13,
+1251 RX Laren. Het bedrijf werkt voor bedrijven met ongeveer vijf tot honderd medewerkers zonder
+eigen IT-afdeling, in Laren, Blaricum, Hilversum, Bussum, Naarden, Huizen, Eemnes, Loosdrecht,
+'s-Graveland, Muiden, Weesp, Baarn, Amersfoort en Utrecht.
+
+## Kernfeiten
+
+- Naam: Kwartel Studio
+- Vestiging: De Kwartel 13, 1251 RX Laren, Noord-Holland, Nederland
+- Telefoon: +31 6 31683221
+- E-mail: info@kwartelstudio.nl
+- Website: https://kwartelstudio.nl
+- Opgericht: 2026
+- Werkgebied: Het Gooi en omgeving (Nederland)
+- Talen: Nederlands, Engels
+- Specialisatie: AI-implementatie, app-ontwikkeling, onderhoud en beheer van software
+- Doelgroep: mkb-bedrijven zonder eigen ontwikkelteam
+
+## Diensten en tarieven
+
+- Kennismaking: gratis, 30 minuten, één proces doorgelicht.
+- Kansenkaart: € 750, één week, procesanalyse met businesscase. Wordt verrekend bij opdracht.
+- AI-pilot: vanaf € 3.950, vier weken, één proces werkend in productie inclusief koppeling en opleiding.
+- AI-implementatie: vanaf € 6.500, zes tot acht weken, meerdere processen of koppelingen.
+- App of portaal: vanaf € 9.500, zes tot twaalf weken, eerste werkende versie met login en rollen.
+- Onderhoud: vanaf € 195 per maand (4 uur), € 395 per maand (8 uur), maandelijks opzegbaar.
+- Losse uren: € 95 per uur.
+- Hosting (€ 15–40 per maand) en modelkosten (€ 10–150 per maand) worden tegen kostprijs doorbelast.
+- Alle bedragen zijn exclusief btw en gelden voor bedrijven tot ongeveer honderd medewerkers.
+
+## Werkwijze
+
+1. Gesprek van 30 minuten, gratis, bij de klant of online.
+2. Kansenkaart: procesanalyse, urenberekening en businesscase in één week.
+3. Pilot: werkend prototype op echte data in twee tot drie weken.
+4. Ingebruikname: koppelingen, rechten, logging, opleiding en overdracht in twee tot vier weken.
+5. Beheer: monitoring, updates en doorontwikkeling, maandelijks opzegbaar.
+
+Na elke fase kan de klant stoppen. Bij oplevering krijgt de klant de code, de documentatie en de
+hostingtoegang; er is geen vendor lock-in en er zijn geen licenties per gebruiker.
+
+## Veelgestelde vragen
+
+**Wat kost AI-implementatie voor een mkb-bedrijf?**
+Bij Kwartel Studio begint een pilot bij € 3.950 en een volledige implementatie bij € 6.500. Een
+eerste app of portaal begint bij € 9.500. Onderhoud is vanaf € 195 per maand en maandelijks
+opzegbaar.
+
+**Hoelang duurt een project?**
+Een pilot staat in vier weken live, een app of portaal in zes tot twaalf weken.
+
+**Moet ik technische kennis hebben?**
+Nee. Kwartel Studio regelt modellen, hosting, koppelingen en beveiliging; de klant levert
+proceskennis en beoordeelt de uitkomst.
+
+**Waar staan de gegevens?**
+Standaard op Europese servers met een verwerkersovereenkomst. Voor gevoelige dossiers draait een
+open model binnen de eigen omgeving, zodat er geen persoonsgegevens de EU verlaten.
+
+**Ben ik na oplevering aan Kwartel Studio vast?**
+Nee. Code, data, documentatie en hostingtoegang gaan over naar de klant. Onderhoud is maandelijks
+opzegbaar met één maand opzegtermijn.
+
+**Werkt Kwartel Studio alleen in Het Gooi?**
+Het zwaartepunt ligt in Het Gooi; daarbuiten is mogelijk met het eerste gesprek online en de
+opleiding op locatie.
+
+## Pagina's
+
+- [Home](https://kwartelstudio.nl/): positionering, diensten, werkwijze, tarieven en vragen.
+- [Diensten](https://kwartelstudio.nl/diensten/): overzicht van de drie soorten opdrachten.
+- [AI-implementatie](https://kwartelstudio.nl/diensten/ai-implementatie/): één proces automatiseren vanaf € 3.950.
+- [App-ontwikkeling](https://kwartelstudio.nl/diensten/app-ontwikkeling/): portaal of app vanaf € 9.500.
+- [Onderhoud en beheer](https://kwartelstudio.nl/diensten/onderhoud-en-beheer/): beheer vanaf € 195 per maand.
+- [Tarieven](https://kwartelstudio.nl/prijzen/): volledige prijslijst en wat inbegrepen is.
+- [Werkwijze](https://kwartelstudio.nl/werkwijze/): de vijf fasen en wat de klant aanlevert.
+- [Voorbeelden](https://kwartelstudio.nl/voorbeelden/): tien concrete toepassingen per sector.
+- [Over ons](https://kwartelstudio.nl/over/): achtergrond, uitgangspunten en contactpersoon.
+- [Kennisbank](https://kwartelstudio.nl/kennisbank/): artikelen over kosten, AVG, toepassingen en begrippen.
+- [Contact](https://kwartelstudio.nl/contact/): formulier, telefoon en bezoekadres.
+- [Privacy](https://kwartelstudio.nl/privacy/): privacyverklaring; geen cookies en geen tracking.
+- [Voorwaarden](https://kwartelstudio.nl/voorwaarden/): algemene voorwaarden.
+
+## Kennisbank
+
+- [Wat kost AI-implementatie voor een mkb-bedrijf?](https://kwartelstudio.nl/kennisbank/wat-kost-ai-implementatie-mkb/)
+- [AI en de AVG: wat mag je als mkb-bedrijf wel en niet?](https://kwartelstudio.nl/kennisbank/ai-en-de-avg/)
+- [Vijf AI-toepassingen die zich binnen drie maanden terugverdienen](https://kwartelstudio.nl/kennisbank/vijf-ai-toepassingen-terugverdienen/)
+- [Chatbot, assistent of agent: wat heb je echt nodig?](https://kwartelstudio.nl/kennisbank/chatbot-assistent-agent-verschil/)
+
+## English summary
+
+Kwartel Studio is a small AI and software studio based in Laren, the Netherlands. It implements AI
+workflows and builds web apps for Dutch SMEs (5–100 employees) without in-house IT, mainly in the
+Gooi region around Hilversum. Pricing is fixed per phase: discovery interview free, opportunity
+scan € 750, AI pilot from € 3.950 (4 weeks), implementation from € 6.500, app or portal from
+€ 9.500, and monthly maintenance from € 195 (cancel anytime). Data is hosted in the EU; for
+sensitive records an open model runs on-premise in the studio's own environment. Clients own the
+code, data and hosting access at handover.
+
+## Contact
+
+- Telefoon: +31 6 31683221
+- E-mail: info@kwartelstudio.nl
+- Adres: De Kwartel 13, 1251 RX Laren, Nederland
+- Bereikbaar: maandag tot vrijdag, 09:00–18:00
+- Reactietijd: binnen één werkdag

@@ -1,0 +1,111 @@
+---
+import Base from '../layouts/Base.astro';
+import { CONTACT, SITE } from '../config';
+import { organisation, webPage, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Privacyverklaring';
+const omschrijving =
+  'Hoe Kwartel Studio omgaat met persoonsgegevens: welke gegevens we verwerken, waarom, hoe lang en welke rechten je hebt. Geen tracking, geen cookies.';
+
+const schemas = [
+  organisation(),
+  webPage('/privacy/', titel, omschrijving),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Privacy', pad: '/privacy/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/privacy/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Privacy</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Privacy</p>
+    <h1>Privacyverklaring</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Kort, omdat er weinig te verklaren valt: deze website gebruikt geen cookies, geen analytics en
+      geen trackers van derden.
+    </p>
+    <div class="article-meta"><span>Laatst bijgewerkt: 18 oktober 2026</span></div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="margin-inline:auto">
+        <h2>Wie is verantwoordelijk</h2>
+        <p>
+          {SITE.legalName}, {CONTACT.street}, {CONTACT.postcode} {CONTACT.city}, is
+          verwerkingsverantwoordelijke voor de gegevens die via deze website en per e-mail
+          binnenkomen. Contact: <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>,
+          {CONTACT.phone}.
+        </p>
+
+        <h2>Welke gegevens we verwerken</h2>
+        <ul>
+          <li><strong>Contactformulier en e-mail.</strong> Naam, bedrijfsnaam, e-mailadres, telefoonnummer en de inhoud van je bericht.</li>
+          <li><strong>Telefoongesprekken.</strong> Geen opnames. Wel notities van wat we bespreken, als dat tot een opdracht leidt.</li>
+          <li><strong>Opdrachtgegevens.</strong> Factuuradres, KvK-nummer, contactpersonen en projectinformatie.</li>
+          <li><strong>Serverlogboeken.</strong> Onze hostingpartij bewaart technische logboeken met IP-adres om de dienst te beveiligen, maximaal 30 dagen.</li>
+        </ul>
+
+        <h2>Waarom we ze verwerken</h2>
+        <ul>
+          <li>Om je vraag te beantwoorden en een gesprek te plannen (uitvoering van een overeenkomst of gerechtvaardigd belang).</li>
+          <li>Om een opdracht uit te voeren en te factureren (uitvoering van een overeenkomst).</li>
+          <li>Om aan onze administratie- en bewaarplicht te voldoen (wettelijke verplichting).</li>
+          <li>Om de website en de servers te beveiligen (gerechtvaardigd belang).</li>
+        </ul>
+
+        <h2>Geen cookies, geen tracking</h2>
+        <p>
+          Deze website plaatst geen cookies en gebruikt geen Google Analytics, geen
+          Facebook-pixel en geen externe lettertypen. Alle bestanden worden vanaf onze eigen server
+          geleverd. Daarom zie je hier ook geen cookiebanner: er is niets om toestemming voor te
+          vragen.
+        </p>
+
+        <h2>Contactformulier</h2>
+        <p>
+          Het formulier op de contactpagina stelt je bericht samen en opent je eigen
+          e-mailprogramma. Er wordt op dat moment niets naar een server gestuurd. Pas als je de
+          e-mail zelf verstuurt, komt je bericht bij ons binnen. Wil je dat niet, bel dan gewoon.
+        </p>
+
+        <h2>Hoe lang we gegevens bewaren</h2>
+        <ul>
+          <li>Aanvragen die niet tot een opdracht leiden: maximaal 12 maanden.</li>
+          <li>Administratie van opdrachten: 7 jaar, vanwege de fiscale bewaarplicht.</li>
+          <li>Serverlogboeken: maximaal 30 dagen.</li>
+        </ul>
+
+        <h2>Wie gegevens ziet</h2>
+        <p>
+          Wij delen gegevens alleen met partijen die nodig zijn om te werken: onze
+          e-mailprovider, boekhouder en hostingpartij, allemaal binnen de Europese Economische
+          Ruimte. Met die partijen sluiten we verwerkersovereenkomsten. Wij verkopen nooit
+          gegevens en gebruiken ze niet voor advertenties.
+        </p>
+        <p>
+          Voor opdrachten waarbij we met persoonsgegevens van jouw klanten werken, sluiten we een
+          aparte verwerkersovereenkomst af. Bij gevoelige dossiers draaien we een model binnen onze
+          eigen omgeving, zodat er geen gegevens naar een leverancier buiten de EU gaan.
+        </p>
+
+        <h2>Jouw rechten</h2>
+        <p>
+          Je kunt ons vragen om inzage, correctie of verwijdering van je gegevens, en je kunt
+          bezwaar maken tegen verwerking. Mail daarvoor naar
+          <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>. We reageren binnen dertig dagen.
+          Ben je niet tevreden, dan kun je een klacht indienen bij de Autoriteit Persoonsgegevens.
+        </p>
+
+        <h2>Beveiliging</h2>
+        <p>
+          De website draait volledig over https en op Europese servers. Toegang tot systemen met
+          persoonsgegevens is beperkt tot de personen die het werk uitvoeren, met
+          tweefactorauthenticatie en dagelijkse back-ups.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

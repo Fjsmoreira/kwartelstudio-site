@@ -1,0 +1,187 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { organisation, webPage, faqSchema, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Werkwijze: van gesprek naar werkende software';
+const omschrijving =
+  'In vijf stappen van eerste gesprek naar software in productie: gesprek, kansenkaart, pilot, ingebruikname en beheer. Je kunt na elke stap stoppen.';
+
+const faq = [
+  {
+    q: 'Hoeveel tijd kost dit mij als opdrachtgever?',
+    a: 'Reken op vier tot zes uur in de eerste twee weken, daarna ongeveer een uur per week voor feedback. De intake en de opleiding doen we bij jou op locatie, de rest verloopt via korte berichten.',
+  },
+  {
+    q: 'Wat heb ik zelf aan te leveren?',
+    a: 'Een voorbeeld van het proces zoals het nu gaat: een offerte, een e-mailsjabloon, een export uit je systeem of een schermopname. Hoe rommeliger het echte materiaal, hoe beter het eindresultaat.',
+  },
+  {
+    q: 'Wat gebeurt er als de pilot niet slaagt?',
+    a: 'Dan stopt het traject na de pilot. Je betaalt alleen het pilotbedrag en houdt de inzichten en het prototype. Wij bouwen niet door op iets wat in de praktijk niet werkt.',
+  },
+  {
+    q: 'Kan ik tussentijds bijsturen?',
+    a: 'Ja, dat is het punt van werken in korte rondes. Na de pilotronde en na elke uitbouwronde bekijk je het resultaat en bepaal je of we doorgaan zoals gepland.',
+  },
+  {
+    q: 'Werken jullie op locatie of op afstand?',
+    a: 'Het eerste gesprek en de opleiding doen we bij jou op locatie in Het Gooi. Het bouwwerk gebeurt op afstand, met een vast moment per week waarop je kunt meekijken.',
+  },
+  {
+    q: 'Wie is er tijdens het project mijn aanspreekpunt?',
+    a: 'Degene die ook bouwt. Geen accountmanager die de vraag doorgeeft aan een team dat je nooit spreekt.',
+  },
+];
+
+const schemas = [
+  organisation(),
+  webPage('/werkwijze/', titel, omschrijving),
+  faqSchema(faq),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Werkwijze', pad: '/werkwijze/' }]),
+];
+
+const stappen = [
+  {
+    n: '01',
+    titel: 'Gesprek',
+    duur: '30 minuten · gratis',
+    tekst:
+      'We beginnen bij het proces dat het meest irriteert, niet bij de techniek. Je laat zien hoe het nu gaat en wij stellen doorvragen: wie doet het, hoe vaak, wat kost een fout? Aan het einde weet je of er iets te winnen valt. Soms is het antwoord nee, en dan zeggen we dat.',
+    oplevering: 'Een eerlijk advies, mondeling en per e-mail bevestigd.',
+  },
+  {
+    n: '02',
+    titel: 'Kansenkaart',
+    duur: '1 week · € 750, verrekend',
+    tekst:
+      'We brengen het proces in kaart, tellen de handelingen en rekenen uit wat automatisering oplevert in uren en euro’s. Je krijgt drie kansen in volgorde van opbrengst, met een schatting van de kosten en het risico per kans. Ook de kansen die we afraden staan erin, met de reden.',
+    oplevering: 'Rapport van vier tot zes pagina’s plus een gesprek van een half uur.',
+  },
+  {
+    n: '03',
+    titel: 'Pilot',
+    duur: '2–3 weken · vast bedrag',
+    tekst:
+      'We bouwen een werkend prototype op jouw echte gegevens. Na twee weken zie je het eerste resultaat en beoordeel je of de uitkomst klopt. Dit is het moment om te stoppen als het niet werkt — dat kost je dan alleen de pilot, geen volledig project.',
+    oplevering: 'Een werkend prototype, getest op minstens twintig echte gevallen.',
+  },
+  {
+    n: '04',
+    titel: 'Ingebruikname',
+    duur: '2–4 weken · vast bedrag',
+    tekst:
+      'Het prototype wordt productiewaardig: koppelingen met je systemen, rechten per gebruiker, foutafhandeling, logging en een noodrem. Je team krijgt uitleg en een korte handleiding. Wij dragen code, documentatie en hostingtoegang aan je over.',
+    oplevering: 'Software in productie, plus documentatie en toegang.',
+  },
+  {
+    n: '05',
+    titel: 'Beheer',
+    duur: 'maandelijks · vanaf € 195',
+    tekst:
+      'Wij monitoren, patchen en lossen storingen op. De uren die overblijven gaan naar kleine verbeteringen die je zelf nooit had aangevraagd. Elk kwartaal een gesprek van een half uur: wat werkt, wat irriteert, wat bouwen we hierna. Maandelijks opzegbaar.',
+    oplevering: 'Een systeem dat blijft werken, en iemand die het kent.',
+  },
+];
+---
+
+<Base title={titel} description={omschrijving} path="/werkwijze/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Werkwijze</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Werkwijze</p>
+    <h1>Vijf stappen, en je kunt na elke stap stoppen.</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Wij werken in korte rondes met een vaste oplevering per ronde. Zo zie je binnen twee weken
+      of het werkt, in plaats van na een half jaar in een vergadering.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <ol class="steps" style="border-bottom:1px solid var(--line)">
+        {stappen.map((s) => (
+          <li class="step">
+            <div class="step__id"><b>{s.n}</b>Stap</div>
+            <div>
+              <h3>{s.titel}</h3>
+              <p>{s.tekst}</p>
+              <p style="font-size:0.9rem;margin-top:0.6rem;color:var(--ink-3)"><strong>Oplevering:</strong> {s.oplevering}</p>
+            </div>
+            <div class="step__meta"><span>Doorlooptijd en prijs</span>{s.duur}</div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Van jou</p>
+        <h2>Wat wij van jou nodig hebben.</h2>
+        <p style="margin-top:1rem;font-size:0.95rem">
+          Geen projectplan, geen ICT-afdeling, geen aanbesteding. Wel dit:
+        </p>
+      </div>
+      <div class="grid-2" style="gap:1.6rem 2.5rem">
+        <div class="card">
+          <span class="tag">01</span>
+          <h3>Een beslisser</h3>
+          <p>Iemand die ja of nee kan zeggen zonder commissie. Dat scheelt weken.</p>
+        </div>
+        <div class="card">
+          <span class="tag">02</span>
+          <h3>Echte voorbeelden</h3>
+          <p>Een offerte, een mailtje, een export, een foto van het formulier. Liefst rommelig en echt.</p>
+        </div>
+        <div class="card">
+          <span class="tag">03</span>
+          <h3>Toegang tot je systemen</h3>
+          <p>Een testomgeving of een uitleesaccount. Wij vragen nooit je wachtwoord, wel een koppeling.</p>
+        </div>
+        <div class="card">
+          <span class="tag">04</span>
+          <h3>Een uur per week</h3>
+          <p>Om te kijken, te testen en bij te sturen. Meer is beter, minder werkt niet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Techniek</p>
+        <h2>Waar het op gebouwd wordt.</h2>
+      </div>
+      <div class="prose" style="max-width:none">
+        <p>
+          Wij gebruiken geen experimentele stapel die over twee jaar niemand meer begrijpt. Wat we
+          bouwen is bewust saai: bekende programmeertalen, een relationele database, Europese
+          hosting en modellen die we via een standaard-API aanspreken. Daardoor kan een andere
+          ontwikkelaar het overnemen als jij dat wilt, en blijven de kosten voorspelbaar.
+        </p>
+        <ul>
+          <li><strong>Talen en frameworks</strong> — TypeScript en Python, met frameworks die al jaren meegaan.</li>
+          <li><strong>Data</strong> — PostgreSQL of SQLite, in je eigen omgeving, met dagelijkse back-ups.</li>
+          <li><strong>Modellen</strong> — Europese aanbieders waar dat kan, lokaal draaiende open modellen voor vertrouwelijke dossiers.</li>
+          <li><strong>Hosting</strong> — servers in Nederland of Duitsland, met een verwerkersovereenkomst.</li>
+          <li><strong>Koppelingen</strong> — via officiële API’s van Exact, Moneybird, AFAS, Microsoft 365 en Google Workspace.</li>
+        </ul>
+        <p style="font-size:0.92rem;color:var(--ink-3)">
+          Geen vendor lock-in: alles wat wij bouwen kun je zelf hosten, en de code is van jou.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} titel="Vragen over de samenwerking" />
+  <CtaBand
+    titel="Begin bij stap één."
+    tekst="Dertig minuten, geen voorbereiding nodig, geen verkooppraatje. Je vertelt wat er vastloopt, wij zeggen of het oplosbaar is."
+  />
+</Base>

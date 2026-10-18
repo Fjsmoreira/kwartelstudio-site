@@ -1,0 +1,185 @@
+---
+import Base from '../layouts/Base.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { PRIJS, CONTACT } from '../config';
+import { organisation, webPage, faqSchema, prijsSchema, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Tarieven: wat kost AI-implementatie?';
+const omschrijving =
+  'Transparante tarieven: kennismaking gratis, kansenkaart € 750 (verrekend), AI-pilot vanaf € 3.950, app vanaf € 9.500, onderhoud vanaf € 195 per maand. Vaste prijs per fase.';
+
+const faq = [
+  {
+    q: 'Waarom werken jullie met vaste prijzen per fase?',
+    a: 'Omdat een mkb-bedrijf geen open einde kan dragen. Elke fase heeft een afgebakende oplevering en een vaste prijs, zodat je vooraf weet wat je uitgeeft. Loopt een fase uit door ons, dan dragen wij dat.',
+  },
+  {
+    q: 'Wat kost AI-implementatie gemiddeld in Nederland?',
+    a: 'Traditionele bureaus rekenen vaak € 100 tot € 150 per uur, waardoor een eerste implementatie snel € 15.000 tot € 40.000 kost. Bij ons start een pilot op € 3.950 en een volledige implementatie op € 6.500, omdat we de scope klein houden en met moderne tooling bouwen in plaats van met een groot team.',
+  },
+  {
+    q: 'Zijn hosting en AI-kosten inbegrepen?',
+    a: 'Nee, die worden tegen kostprijs doorbelast. Reken op € 15 tot € 40 per maand voor hosting en € 10 tot € 150 per maand aan modelkosten, afhankelijk van het aantal verwerkingen. Je ziet die kosten op je maandfactuur, zonder opslag.',
+  },
+  {
+    q: 'Hoe wordt er gefactureerd?',
+    a: 'In drie delen: 40% bij de start, 40% bij de pilotoplevering en 20% na ingebruikname. Onderhoud factureren we maandelijks achteraf. Betalingstermijn is veertien dagen.',
+  },
+  {
+    q: 'Kan ik beginnen met alleen een kansenkaart?',
+    a: 'Ja, en dat raden we vaak aan. Je betaalt € 750 voor de analyse en de businesscase. Ga je daarna in opdracht, dan trekken we dat bedrag van de projectprijs af. Zeg je nee, dan houd je het rapport.',
+  },
+  {
+    q: 'Wat als mijn budget lager is?',
+    a: 'Dan kijken we of een kleiner eerste traject kan: één koppeling, één scherm, één rapport. Wij beginnen liever met iets kleins dat werkt dan met iets groots dat blijft liggen. Zeg eerlijk wat je budget is, dan zeggen wij eerlijk wat daarin past.',
+  },
+];
+
+const schemas = [
+  organisation(),
+  webPage('/prijzen/', titel, omschrijving),
+  prijsSchema(),
+  faqSchema(faq),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Tarieven', pad: '/prijzen/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/prijzen/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Tarieven</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Tarieven</p>
+    <h1>Wat het kost, voordat je een gesprek aangaat.</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Geen prijs op aanvraag en geen uurtje-factuurtje. Hieronder staan de bedragen waarmee we
+      normaal werken, wat erin zit en wat er los bij komt.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="answer-box" style="margin-top:0">
+        <p>
+          <strong>Kort antwoord:</strong> een AI-pilot bij een mkb-bedrijf kost bij Kwartel Studio
+          {PRIJS.pilot} en staat in vier weken live. Een eerste app of portaal begint bij
+          {PRIJS.app}. Onderhoud is {PRIJS.onderhoud} per maand en maandelijks opzegbaar.
+        </p>
+      </div>
+
+      <table class="pricetable">
+        <caption>Alle bedragen zijn exclusief btw en gelden voor bedrijven tot ongeveer honderd medewerkers. Hosting en modelkosten worden tegen kostprijs doorbelast.</caption>
+        <thead>
+          <tr><th scope="col">Onderdeel</th><th scope="col">Wat je krijgt</th><th scope="col">Doorlooptijd</th><th scope="col">Investering</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Kennismaking</th>
+            <td>Gesprek van 30 minuten, één proces doorgelicht, eerlijk advies of het zin heeft</td>
+            <td>Binnen een week</td>
+            <td>{PRIJS.gesprek}</td>
+          </tr>
+          <tr>
+            <th scope="row">Kansenkaart</th>
+            <td>Procesanalyse, urenberekening, businesscase en drie concrete kansen in volgorde van opbrengst</td>
+            <td>1 week</td>
+            <td>{PRIJS.scan}</td>
+          </tr>
+          <tr>
+            <th scope="row">AI-pilot</th>
+            <td>Eén proces werkend in productie, één koppeling, opleiding van je team, code en documentatie</td>
+            <td>4 weken</td>
+            <td>{PRIJS.pilot}</td>
+          </tr>
+          <tr>
+            <th scope="row">AI-implementatie</th>
+            <td>Meerdere processen of koppelingen, uitgebreidere gebruikersinterface, ingerichte monitoring</td>
+            <td>6–8 weken</td>
+            <td>{PRIJS.implementatie}</td>
+          </tr>
+          <tr>
+            <th scope="row">App of portaal</th>
+            <td>Eerste werkende versie met login, rollen, jouw huisstijl en koppeling met je administratie</td>
+            <td>6–12 weken</td>
+            <td>{PRIJS.app}</td>
+          </tr>
+          <tr>
+            <th scope="row">Onderhoud — basis</th>
+            <td>Monitoring, beveiligingsupdates en 4 uur kleine wijzigingen per maand</td>
+            <td>Maandelijks</td>
+            <td>{PRIJS.onderhoud} p/m</td>
+          </tr>
+          <tr>
+            <th scope="row">Onderhoud — plus</th>
+            <td>Zoals basis, met 8 uur per maand en kwartaalgesprek over doorontwikkeling</td>
+            <td>Maandelijks</td>
+            <td>€ 395 p/m</td>
+          </tr>
+          <tr>
+            <th scope="row">Losse uren</th>
+            <td>Werk buiten een lopende opdracht of boven je onderhoudsbundel</td>
+            <td>In overleg</td>
+            <td>{PRIJS.uur} p/u</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Inbegrepen</p>
+        <h2>Wat er zonder meer bij zit.</h2>
+      </div>
+      <div class="grid-2" style="gap:1.8rem 2.5rem">
+        <div>
+          <h3 style="font-size:1.02rem;margin-bottom:0.3rem">Verwerkersovereenkomst</h3>
+          <p style="font-size:0.94rem">Standaard bij elke opdracht waarbij wij met persoonsgegevens werken, inclusief een overzicht van de verwerkingen.</p>
+        </div>
+        <div>
+          <h3 style="font-size:1.02rem;margin-bottom:0.3rem">Code en documentatie</h3>
+          <p style="font-size:0.94rem">Bij oplevering krijg je de repository, de inrichtingsdocumentatie en de hostingtoegang. Zonder sloten erop.</p>
+        </div>
+        <div>
+          <h3 style="font-size:1.02rem;margin-bottom:0.3rem">Opleiding van je team</h3>
+          <p style="font-size:0.94rem">Een sessie van een half uur tot een uur, op locatie of online, met een korte handleiding die je kunt doorsturen.</p>
+        </div>
+        <div>
+          <h3 style="font-size:1.02rem;margin-bottom:0.3rem">Dertig dagen nazorg</h3>
+          <p style="font-size:0.94rem">Storingen en vragen binnen een maand na oplevering lossen we op zonder kosten. Daarna loopt het via het onderhoudscontract.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Los bij</p>
+        <h2>Wat je apart betaalt.</h2>
+      </div>
+      <div class="prose" style="max-width:none">
+        <ul>
+          <li><strong>Hosting</strong> — € 15 tot € 40 per maand, afhankelijk van de omvang. Wij regelen het, jij betaalt de factuur.</li>
+          <li><strong>Modelkosten</strong> — € 10 tot € 150 per maand bij normaal gebruik. Bij grote volumes rekenen we vooraf een schatting.</li>
+          <li><strong>Licenties van derden</strong> — bijvoorbeeld een koppeling met je boekhoudpakket, als die niet in je bestaande abonnement zit.</li>
+          <li><strong>Werk buiten de afgesproken scope</strong> — altijd pas na je akkoord op een schatting, nooit als verrassing op de factuur.</li>
+        </ul>
+        <p style="font-size:0.92rem;color:var(--ink-3)">
+          Twijfel je of jouw situatie binnen deze tarieven valt? Bel {CONTACT.phone} of stuur een
+          bericht. Je krijgt binnen één werkdag antwoord, ook als het antwoord nee is.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faq} titel="Vragen over prijzen" />
+  <CtaBand
+    titel="Liever eerst rekenen dan gokken?"
+    tekst="Met een kansenkaart van € 750 weet je binnen een week wat automatisering in jouw bedrijf oplevert — en of het de investering waard is. Het bedrag gaat van de projectprijs af als je daarna doorgaat."
+    knop="Vraag een kansenkaart aan"
+  />
+</Base>

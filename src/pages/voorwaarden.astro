@@ -1,0 +1,154 @@
+---
+import Base from '../layouts/Base.astro';
+import { CONTACT, SITE } from '../config';
+import { organisation, webPage, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Algemene voorwaarden';
+const omschrijving =
+  'De algemene voorwaarden van Kwartel Studio voor opdrachten: offertes, vaste prijzen per fase, betaling, oplevering, intellectueel eigendom en aansprakelijkheid.';
+
+const schemas = [
+  organisation(),
+  webPage('/voorwaarden/', titel, omschrijving),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Voorwaarden', pad: '/voorwaarden/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/voorwaarden/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Voorwaarden</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Voorwaarden</p>
+    <h1>Algemene voorwaarden</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Kort en leesbaar. Wij werken met vaste prijzen per fase en zonder kleine lettertjes — deze
+      voorwaarden zeggen vooral wat je van ons kunt verwachten.
+    </p>
+    <div class="article-meta"><span>Versie 1.0 · 18 oktober 2026</span></div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="margin-inline:auto">
+        <h2>1. Toepasselijkheid</h2>
+        <p>
+          Deze voorwaarden gelden voor alle aanbiedingen en overeenkomsten van {SITE.legalName},
+          {CONTACT.street}, {CONTACT.postcode} {CONTACT.city}. Afwijkingen gelden alleen als we ze
+          per e-mail of in de opdrachtbevestiging hebben vastgelegd.
+        </p>
+
+        <h2>2. Offertes en opdrachten</h2>
+        <p>
+          Een offerte is veertig dagen geldig en noemt een vaste prijs per fase en een
+          doorlooptijd. Een opdracht komt tot stand wanneer je de offerte per e-mail accepteert of
+          een opdrachtbevestiging ondertekent. Mondelinge afspraken bevestigen we achteraf per
+          e-mail.
+        </p>
+
+        <h2>3. Prijzen en betaling</h2>
+        <p>
+          Alle bedragen zijn in euro’s en exclusief btw. Projecten worden in drie delen
+          gefactureerd: 40% bij de start, 40% bij de pilotoplevering en 20% na ingebruikname.
+          Onderhoud wordt maandelijks achteraf gefactureerd. Betaaltermijn is veertien dagen. Bij
+          overschrijding mogen we het werk opschorten tot de factuur is voldaan.
+        </p>
+        <p>
+          Hosting- en modelkosten worden tegen kostprijs doorbelast, zonder opslag. Meerwerk buiten
+          de afgesproken scope voeren we alleen uit na jouw schriftelijke akkoord op een schatting.
+        </p>
+
+        <h2>4. Uitvoering</h2>
+        <p>
+          We voeren de opdracht uit naar beste inzicht en vermogen, met de zorg die van een
+          redelijk handelend vakgenoot mag worden verwacht. Een inspanningsverbintenis, geen
+          resultaatsverbintenis — met één uitzondering: de afgesproken oplevering leveren we
+          werkend op.
+        </p>
+        <p>
+          Genoemde doorlooptijden zijn gebaseerd op de informatie die bij de offerte bekend was.
+          Werken we met een leverancier of koppeling die vertraging oplevert, dan melden we dat
+          binnen twee werkdagen met een nieuwe planning.
+        </p>
+
+        <h2>5. Wat wij van jou nodig hebben</h2>
+        <p>
+          Een beslisser die kan goedkeuren, toegang tot de systemen die gekoppeld moeten worden
+          (bij voorkeur een testomgeving), en inhoudelijke feedback binnen vijf werkdagen. Blijft
+          die feedback langer uit, dan schuift de planning op en kunnen we de gereserveerde uren in
+          rekening brengen.
+        </p>
+
+        <h2>6. Intellectueel eigendom</h2>
+        <p>
+          Alle code, documentatie en ontwerpen die we voor jou bouwen, worden jouw eigendom bij
+          volledige betaling van de laatste factuur. Wij behouden het recht om algemene kennis,
+          werkwijzen en niet-klantspecifieke componenten te hergebruiken, en om de opdracht in
+          algemene bewoordingen te noemen — nooit met jouw naam of logo zonder toestemming.
+        </p>
+        <p>
+          Gebruik je software van derden, dan gelden de licentievoorwaarden van die partij. Wij
+          melden dat vooraf, zodat je niet verrast wordt door een licentie die je niet kunt
+          overdragen.
+        </p>
+
+        <h2>7. Oplevering en acceptatie</h2>
+        <p>
+          Na oplevering heb je veertien dagen om te testen en gebreken te melden. Een gebrek is een
+          afwijking van wat in de offerte staat; een nieuwe wens is meerwerk. Meldingen lossen we
+          binnen tien werkdagen op, zonder kosten. Na veertien dagen of na ingebruikname geldt de
+          oplevering als geaccepteerd.
+        </p>
+
+        <h2>8. Onderhoud</h2>
+        <p>
+          Onderhoud loopt maandelijks en is opzegbaar met één maand opzegtermijn, schriftelijk.
+          Het omvat monitoring, beveiligingsupdates en het urenbudget dat in de offerte staat.
+          Storingen die het gevolg zijn van wijzigingen door jou of een derde vallen buiten het
+          contract; die lossen we op in overleg, tegen het geldende uurtarief.
+        </p>
+
+        <h2>9. Aansprakelijkheid</h2>
+        <p>
+          Onze aansprakelijkheid is per opdracht beperkt tot het bedrag dat je voor die opdracht
+          hebt betaald, met een maximum van het factuurbedrag van de laatste twaalf maanden.
+          Indirecte schade, waaronder gederfde winst en verlies van gegevens, is uitgesloten, tenzij
+          sprake is van opzet of grove nalatigheid. Wij raden aan om zelf dagelijkse back-ups te
+          laten maken van bedrijfskritische gegevens; wij doen dat voor wat wij hosten.
+        </p>
+
+        <h2>10. Overmacht</h2>
+        <p>
+          Bij overmacht — storing bij een leverancier, uitval van internet, ziekte — schuift de
+          planning op. Duurt de overmacht langer dan zestig dagen, dan mogen beide partijen de
+          overeenkomst beëindigen. Wat tot dan is uitgevoerd, wordt afgerekend.
+        </p>
+
+        <h2>11. Geheimhouding</h2>
+        <p>
+          Wij behandelen alles wat we bij jou zien als vertrouwelijk: processen, prijzen,
+          klantgegevens en systemen. Dat geldt ook na het einde van de opdracht. Werken we met
+          persoonsgegevens, dan sluiten we een verwerkersovereenkomst die voldoet aan artikel 28
+          AVG.
+        </p>
+
+        <h2>12. Beëindiging</h2>
+        <p>
+          Beide partijen kunnen een lopende opdracht tussentijds beëindigen met twee weken
+          opzegtermijn. Het tot dan uitgevoerde werk wordt afgerekend naar rato van de fase, en
+          opgeleverd wat af is. Reden tot onmiddellijke beëindiging is er bij wanbetaling of bij
+          een verzoek om iets te bouwen dat wettelijk niet mag.
+        </p>
+
+        <h2>13. Klachten en toepasselijk recht</h2>
+        <p>
+          Klachten bespreken we eerst samen. Kom je er niet uit, dan geldt Nederlands recht en is de
+          rechtbank Midden-Nederland bevoegd. Deze voorwaarden zijn opgesteld in overeenstemming
+          met de Nederlandse wet en worden aangevuld door de algemene voorwaarden van de branche
+          waarin wij werken, voor zover die niet in strijd zijn met het bovenstaande.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

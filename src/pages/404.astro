@@ -1,0 +1,32 @@
+---
+import Base from '../layouts/Base.astro';
+import { CONTACT } from '../config';
+---
+
+<Base
+  title="Pagina niet gevonden"
+  description="Deze pagina bestaat niet (meer). Ga naar de homepage, bekijk de diensten of neem contact op met Kwartel Studio."
+  path="/404/"
+  noindex
+>
+  <section class="section" style="padding-block:clamp(3rem,8vw,7rem)">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Fout 404</p>
+        <h1 style="font-size:clamp(2.2rem,5vw,3.6rem)">Deze pagina is er niet.</h1>
+      </div>
+      <div>
+        <p class="lede" style="margin-bottom:1.6rem">
+          Misschien is de link oud, of is het adres net anders geschreven. Dit zijn de plekken waar
+          je waarschijnlijk wilde zijn.
+        </p>
+        <ul class="principles">
+          <li><span><strong><a href="/diensten/">Diensten</a></strong>AI-implementatie, app-ontwikkeling en beheer.</span></li>
+          <li><span><strong><a href="/prijzen/">Tarieven</a></strong>Wat een traject kost, zonder “op aanvraag”.</span></li>
+          <li><span><strong><a href="/voorbeelden/">Voorbeelden</a></strong>Tien dingen die we bouwen en wat ze opleveren.</span></li>
+          <li><span><strong><a href="/contact/">Contact</a></strong>Bel {CONTACT.phone} of stuur een bericht.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Base>

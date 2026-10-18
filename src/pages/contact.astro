@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+import { CONTACT, SITE, AREA } from '../config';
+import { organisation, webPage, breadcrumbSchema } from '../lib/schema';
+
+const titel = 'Contact: plan een gesprek in Laren';
+const omschrijving =
+  'Plan een gesprek van dertig minuten bij Kwartel Studio in Laren. Bel +31 6 31683221 of stuur een bericht — je krijgt binnen één werkdag antwoord.';
+
+const schemas = [
+  organisation(),
+  webPage('/contact/', titel, omschrijving),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: titel,
+    url: `${SITE.url}/contact/`,
+    about: { '@id': `${SITE.url}/#organisatie` },
+  },
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Contact', pad: '/contact/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/contact/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol><li><a href="/">Home</a></li><li>Contact</li></ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Contact</p>
+    <h1>Welk proces irriteert je team het meest?</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:50ch">
+      Beschrijf het in twee zinnen. Wij antwoorden binnen één werkdag met een eerlijke inschatting
+      — ook als het antwoord is dat je het vooral niet moet laten bouwen.
+    </p>
+  </header>
+
+  <section class="section">
+    <div class="container split" style="gap:clamp(2rem,6vw,5rem)">
+      <div>
+        <form
+          class="form"
+          id="aanvraag"
+          novalidate
+          data-endpoint={import.meta.env.PUBLIC_FORM_ENDPOINT ?? ''}
+          data-email={CONTACT.email}
+          data-telefoon={CONTACT.phone}
+        >
+          <div class="form__row">
+            <div class="field">
+              <label for="naam">Naam</label>
+              <input id="naam" name="naam" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="bedrijf">Bedrijf</label>
+              <input id="bedrijf" name="bedrijf" type="text" autocomplete="organization" required />
+            </div>
+          </div>
+
+          <div class="form__row">
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="telefoon">Telefoon <span style="text-transform:none;letter-spacing:0">(optioneel)</span></label>
+              <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="onderwerp">Waar gaat het over?</label>
+            <select id="onderwerp" name="onderwerp">
+              <option>Een proces automatiseren</option>
+              <option>Een app of portaal bouwen</option>
+              <option>Onderhoud van bestaande software</option>
+              <option>Kansenkaart aanvragen</option>
+              <option>Weet ik nog niet</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="bericht">Waar loopt het vast?</label>
+            <textarea id="bericht" name="bericht" required placeholder="Bijvoorbeeld: wij typen elke order uit een e-mail over in ons systeem, dat kost ons ongeveer zes uur per week."></textarea>
+            <span class="field__hint">Geen details over persoonsgegevens nodig — dat bespreken we later.</span>
+          </div>
+
+          <div class="field">
+            <label style="display:flex;gap:0.6rem;align-items:flex-start;text-transform:none;letter-spacing:0;font-family:var(--font-body);font-size:0.9rem;color:var(--ink-2)">
+              <input type="checkbox" name="akkoord" required style="width:auto;margin-top:0.25rem" />
+              <span>Ik ga ermee akkoord dat mijn gegevens worden gebruikt om op deze aanvraag te reageren, zoals beschreven in de <a href="/privacy/">privacymelding</a>.</span>
+            </label>
+          </div>
+
+          <div class="btn-row">
+            <button class="btn btn--primary" type="submit">Verstuur aanvraag<span class="btn__arrow" aria-hidden="true">→</span></button>
+            <a class="btn btn--ghost" href={CONTACT.phoneHref}>Bel {CONTACT.phone}</a>
+          </div>
+          <p class="form__note" id="form-status" role="status" aria-live="polite">
+            Liever direct mailen? Stuur naar <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>.
+          </p>
+        </form>
+      </div>
+
+      <div>
+        <div class="werkbon" style="box-shadow:none">
+          <div class="werkbon__perf" aria-hidden="true"></div>
+          <div class="werkbon__top">
+            <span class="werkbon__code">Bezoekadres</span>
+            <span>Op afspraak</span>
+          </div>
+          <h3 style="margin-top:1.1rem">{CONTACT.street}</h3>
+          <p style="margin-bottom:1.2rem">{CONTACT.postcode} {CONTACT.city}<br />{CONTACT.region}</p>
+          <dl class="werkbon__specs">
+            <div><dt>Telefoon</dt><dd><a href={CONTACT.phoneHref} style="text-decoration:none">{CONTACT.phone}</a></dd></div>
+            <div><dt>E-mail</dt><dd><a href={`mailto:${CONTACT.email}`} style="text-decoration:none">{CONTACT.email}</a></dd></div>
+            <div><dt>Bereikbaar</dt><dd>ma–vr, 9:00–18:00</dd></div>
+            <div><dt>Reactie</dt><dd>{CONTACT.responseTime}</dd></div>
+          </dl>
+        </div>
+
+        <h2 style="font-size:1.15rem;margin:2rem 0 0.8rem">Wat er daarna gebeurt</h2>
+        <ol class="principles" style="border-bottom:0">
+          <li><span><strong>Je krijgt antwoord van Fernando.</strong> Binnen één werkdag, met een eerste inschatting.</span></li>
+          <li><span><strong>We plannen dertig minuten.</strong> Bij jou op locatie in Het Gooi, of online als dat handiger is.</span></li>
+          <li><span><strong>Je hoort wat het kost.</strong> Een bedrag en een doorlooptijd, geen “op aanvraag”.</span></li>
+        </ol>
+
+        <p class="mono-label" style="margin-top:1.6rem;line-height:1.8">
+          Werkgebied: {AREA.slice(0, 8).join(', ')} en omstreken.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    const form = document.getElementById('aanvraag');
+    const status = document.getElementById('form-status');
+    const endpoint = form?.dataset.endpoint || '';
+    const emailadres = form?.dataset.email || 'info@kwartelstudio.nl';
+    const telefoon = form?.dataset.telefoon || '+31 6 31683221';
+
+    form?.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const data = new FormData(form);
+      const velden = Object.fromEntries(data.entries());
+      const tekst = [
+        `Naam: ${velden.naam}`,
+        `Bedrijf: ${velden.bedrijf}`,
+        `E-mail: ${velden.email}`,
+        `Telefoon: ${velden.telefoon || '-'}`,
+        `Onderwerp: ${velden.onderwerp}`,
+        '',
+        velden.bericht,
+      ].join('\n');
+
+      if (endpoint) {
+        try {
+          const res = await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(velden),
+          });
+          if (!res.ok) throw new Error(String(res.status));
+          form.reset();
+          status.textContent = 'Verstuurd. Je krijgt binnen één werkdag antwoord van Fernando.';
+          return;
+        } catch (err) {
+          status.textContent = 'Versturen via het formulier lukte niet. Je e-mailprogramma opent nu met hetzelfde bericht.';
+        }
+      }
+
+      const mailto =
+        'mailto:' + emailadres + '?subject=' +
+        encodeURIComponent(`Aanvraag via website — ${velden.bedrijf || velden.naam}`) +
+        '&body=' +
+        encodeURIComponent(tekst);
+      window.location.href = mailto;
+      status.textContent = 'Je e-mailprogramma opent met het bericht. Komt er niets? Bel ' + telefoon + '.';
+    });
+  </script>
+</Base>

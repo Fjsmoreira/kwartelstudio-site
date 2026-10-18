@@ -1,0 +1,99 @@
+---
+import Base from '../../layouts/Base.astro';
+import Werkbon from '../../components/Werkbon.astro';
+import CtaBand from '../../components/CtaBand.astro';
+import { SITE, DIENSTEN } from '../../config';
+import { organisation, webPage, breadcrumbSchema } from '../../lib/schema';
+
+const titel = 'Diensten: AI-implementatie, apps en beheer';
+const omschrijving =
+  'Drie soorten opdrachten: AI-implementatie vanaf € 3.950, app-ontwikkeling vanaf € 9.500 en onderhoud vanaf € 195 per maand. Vaste prijs, Nederlands hosted, code blijft van jou.';
+
+const schemas = [
+  organisation(),
+  webPage('/diensten/', titel, omschrijving),
+  breadcrumbSchema([{ naam: 'Home', pad: '/' }, { naam: 'Diensten', pad: '/diensten/' }]),
+];
+---
+
+<Base title={titel} description={omschrijving} path="/diensten/" schemas={schemas}>
+  <nav class="container breadcrumbs" aria-label="Kruimelpad">
+    <ol>
+      <li><a href="/">Home</a></li>
+      <li>Diensten</li>
+    </ol>
+  </nav>
+
+  <header class="container article-header">
+    <p class="eyebrow">Diensten</p>
+    <h1>Wat we bouwen, en wat het kost om het te laten draaien.</h1>
+    <p class="lede" style="margin-top:1.2rem;max-width:52ch">
+      Kwartel Studio doet drie dingen: een proces automatiseren, een app of portaal bouwen, en
+      zorgen dat het blijft werken. Alles met een vaste prijs per fase en een oplevering die je
+      zelf kunt controleren.
+    </p>
+  </header>
+
+  <section class="section" aria-label="Overzicht diensten">
+    <div class="container grid-3">
+      {DIENSTEN.map((d, i) => (
+        <Werkbon
+          code={d.code}
+          titel={d.titel}
+          beschrijving={d.kort}
+          voorWie={d.voorWie}
+          doorlooptijd={d.doorlooptijd}
+          investering={d.investering}
+          href={`/diensten/${d.slug}/`}
+          stamp={i === 0 ? 'Meest gekozen' : i === 1 ? 'Maatwerk' : 'Terugkerend'}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="section section--panel">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Eerlijk over de grens</p>
+        <h2>Wat we niet doen.</h2>
+      </div>
+      <div class="grid-2" style="gap:2rem">
+        <div>
+          <h3>Geen AI-strategie op papier</h3>
+          <p style="font-size:0.96rem">
+            Een visiedocument van veertig pagina’s lost je dinsdagmiddag niet op. Wij beginnen bij
+            het proces en eindigen bij werkende software. Strategie leveren we alleen als je die
+            echt nodig hebt, bijvoorbeeld voor een investeringsbeslissing.
+          </p>
+        </div>
+        <div>
+          <h3>Geen model-training of datawetenschap</h3>
+          <p style="font-size:0.96rem">
+            Wij trainen geen eigen modellen en bouwen geen aanbevelingsalgoritmes voor
+            miljoenen gebruikers. Voor dat werk verwijzen we door naar partijen die daar beter in
+            zijn. Wij bouwen de laag eromheen: het proces, de koppelingen, de gebruikersinterface.
+          </p>
+        </div>
+        <div>
+          <h3>Geen licenties per gebruiker</h3>
+          <p style="font-size:0.96rem">
+            Je betaalt voor het bouwen en voor het beheer, niet voor het recht om je eigen software
+            te gebruiken. Nieuwe medewerkers toevoegen kost niets extra.
+          </p>
+        </div>
+        <div>
+          <h3>Geen projecten zonder eigenaar</h3>
+          <p style="font-size:0.96rem">
+            We werken alleen met een opdrachtgever die mandaat heeft om te beslissen. Projecten met
+            een commissie en drie leveranciers lopen bij ons altijd uit — die zeggen we vriendelijk af.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    titel="Weet je nog niet welke werkbon past?"
+    tekst="Dat is normaal. In dertig minuten weten we samen of het om een proces, een app of alleen onderhoud gaat — en of het überhaupt de moeite is."
+  />
+</Base>

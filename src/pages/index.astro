@@ -1,0 +1,328 @@
+---
+import Base from '../layouts/Base.astro';
+import Werkbon from '../components/Werkbon.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { SITE, CONTACT, DIENSTEN, SECTOREN, AREA, PRIJS } from '../config';
+import { organisation, website, webPage, faqSchema, prijsSchema } from '../lib/schema';
+
+const faq = [
+  {
+    q: 'Wat kost AI-implementatie bij een mkb-bedrijf?',
+    a: 'Bij Kwartel Studio begint een pilot bij € 3.950 voor één proces, inclusief koppeling en oplevering in productie. Een volledige implementatie met meerdere processen start rond € 6.500 en een eerste werkende app of portaal rond € 9.500. Onderhoud is maandelijks opzegbaar vanaf € 195. Je krijgt altijd een vaste prijs per fase, geen open einde op uren.',
+  },
+  {
+    q: 'Hoelang duurt het voordat zoiets live staat?',
+    a: 'Een pilot staat in vier weken live, een app of portaal in zes tot twaalf weken. Wij bouwen in korte rondes zodat je na twee weken al een werkend scherm ziet in plaats van een specificatiedocument.',
+  },
+  {
+    q: 'Moet ik technische kennis hebben?',
+    a: 'Nee. Wij regelen modellen, hosting, koppelingen en beveiliging. Jij levert de kennis van je eigen proces en beoordeelt of de uitkomst klopt. Uitleg krijg je in gewone taal, zonder jargon.',
+  },
+  {
+    q: 'Wat gebeurt er met mijn gegevens?',
+    a: 'Standaard draait alles op Europese servers met een verwerkersovereenkomst. Voor gevoelige dossiers, zoals patiënt- of cliëntgegevens, gebruiken we een model dat binnen onze eigen omgeving draait. Er gaat dan geen data naar een Amerikaanse leverancier.',
+  },
+  {
+    q: 'Ben ik na oplevering aan jullie vast?',
+    a: 'Nee. Je krijgt de code, de documentatie en de hostingtoegang. Onderhoud is maandelijks opzegbaar met één maand opzegtermijn. Wij blijven liever omdat het werkt, niet omdat je vastzit.',
+  },
+  {
+    q: 'Werken jullie alleen in Het Gooi?',
+    a: 'We zitten in Laren en werken het liefst in Het Gooi en omgeving: Hilversum, Bussum, Naarden, Huizen, Blaricum, Eemnes, Loosdrecht, Weesp en Baarn. Daarbuiten kan ook; dan doen we het eerste gesprek online en de opleiding op locatie.',
+  },
+];
+
+const stappen = [
+  {
+    id: 'Stap 01',
+    titel: 'Gesprek van dertig minuten',
+    tekst: 'Je vertelt welk proces de meeste tijd kost. Wij stellen vragen en zeggen direct of software daar iets aan kan veranderen. Geen verkooppraatje, geen presentatie.',
+    duur: '30 minuten',
+    prijs: 'Gratis',
+  },
+  {
+    id: 'Stap 02',
+    titel: 'Kansenkaart',
+    tekst: 'We lopen het proces door, tellen de uren en rekenen de businesscase uit. Je krijgt drie kansen op papier met een advies: doen, uitstellen of laten liggen.',
+    duur: '1 week',
+    prijs: '€ 750, verrekend',
+  },
+  {
+    id: 'Stap 03',
+    titel: 'Pilot op jouw data',
+    tekst: 'Een werkend prototype op echte gegevens, niet op voorbeeldbestanden. Na twee weken zie je of het in de praktijk klopt. Zo niet, dan stoppen we hier.',
+    duur: '2–3 weken',
+    prijs: 'Vast bedrag',
+  },
+  {
+    id: 'Stap 04',
+    titel: 'In productie',
+    tekst: 'Koppelingen, rechten, foutafhandeling, instructie aan je team en overdracht van code en documentatie. Daarna meet je het resultaat in uren, niet in gevoel.',
+    duur: '2–4 weken',
+    prijs: 'Vast bedrag',
+  },
+  {
+    id: 'Stap 05',
+    titel: 'Beheer en doorbouw',
+    tekst: 'Wij houden het draaiend, lossen storingen op en gebruiken de overgebleven uren voor kleine verbeteringen. Per maand opzegbaar.',
+    duur: 'Maandelijks',
+    prijs: PRIJS.onderhoud,
+  },
+];
+
+const principes = [
+  {
+    titel: 'Je koopt een resultaat, geen uren',
+    tekst: 'Elke fase heeft een vaste prijs en een duidelijke oplevering. Gaat het meer werk kosten dan gedacht, dan is dat ons probleem, niet jouw factuur.',
+  },
+  {
+    titel: 'Wij zeggen ook nee',
+    tekst: 'Als een standaardpakket goedkoper is, zeggen we dat. Als jouw proces zich niet leent voor automatisering, zeggen we dat ook. Een mislukt project kost ons meer dan een gemiste opdracht.',
+  },
+  {
+    titel: 'Klein beginnen, snel zien',
+    tekst: 'Geen programma van een half jaar. Eerst het duurste uur van je week oplossen, dan pas de rest. Zo blijft het risico klein en het budget behapbaar.',
+  },
+  {
+    titel: 'Alles blijft van jou',
+    tekst: 'Code, data, documentatie en hostingtoegang. Geen licenties per gebruiker, geen vendor lock-in, geen meerjarig contract om software in leven te houden.',
+  },
+];
+
+const schemas = [
+  organisation(),
+  website(),
+  webPage('/', `${SITE.name} — ${SITE.tagline}`, SITE.description),
+  faqSchema(faq),
+  prijsSchema(),
+];
+---
+
+<Base
+  title="AI-implementatie en apps voor het mkb"
+  description="Kwartel Studio bouwt AI-toepassingen en apps voor mkb-bedrijven in Het Gooi. Eén proces geautomatiseerd, vaste prijs, live in 4–8 weken. Code en data blijven van jou."
+  path="/"
+  schemas={schemas}
+>
+  <section class="hero">
+    <div class="container">
+      <div class="hero__head">
+        <p class="eyebrow">AI-studio in Laren · Het Gooi</p>
+        <h1>AI voor bedrijven die geen <span class="mark-underline nowrap">AI-bedrijf zijn.</span></h1>
+      </div>
+
+      <div class="hero__grid">
+        <div>
+          <p class="hero__sub">
+            Wij bouwen de assistent, de automatisering of de app die jouw team elke week uren teruggeeft.
+            Eén proces, vaste prijs, live in vier tot acht weken. De code en de data blijven van jou.
+          </p>
+          <div class="btn-row hero__actions">
+            <a class="btn btn--primary" href="/contact/">Plan een gesprek<span class="btn__arrow" aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="/voorbeelden/">Bekijk wat we bouwen</a>
+          </div>
+          <ul class="hero__facts">
+            <li>Vaste prijs per fase</li>
+            <li>Live in 4–8 weken</li>
+            <li>Nederlandse hosting</li>
+            <li>Maandelijks opzegbaar</li>
+          </ul>
+        </div>
+
+        <div>
+          <Werkbon
+            code="2401"
+            titel="Intake-assistent voor een tandartspraktijk"
+            beschrijving="Patiënten vullen vooraf een korte intake in. De assistent stelt de juiste vragen, maakt het verslag en zet de afspraak in de agenda — zonder dat de balie typt."
+            voorWie="praktijk met drie stoelen"
+            doorlooptijd="4 weken"
+            investering="€ 4.950 vast"
+            href="/voorbeelden/"
+            stamp="Voorbeeld"
+            tilt
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section section--tight" style="padding-block:1.1rem;border-top:1px solid var(--line)">
+    <div class="container">
+      <p class="mono-label" style="text-align:center;letter-spacing:0.16em">
+        Laren · Blaricum · Hilversum · Bussum · Naarden · Huizen · Eemnes · Loosdrecht · Weesp · Baarn
+      </p>
+    </div>
+  </div>
+
+  <section class="section" aria-labelledby="diensten-titel">
+    <div class="container">
+      <div class="split" style="margin-bottom:2.5rem">
+        <div>
+          <p class="eyebrow">Wat we doen</p>
+          <h2 id="diensten-titel">Drie werkbonnen, geen abonnement op beloftes.</h2>
+        </div>
+        <div>
+          <p>
+            De meeste mkb-bedrijven hebben geen AI-strategie nodig. Ze hebben iemand nodig die één
+            vervelend proces overneemt en het daarna blijft onderhouden. Dat is precies wat wij doen,
+            in drie soorten opdrachten.
+          </p>
+          <a class="text-link" href="/diensten/">Alle diensten en werkwijze <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        {DIENSTEN.map((d, i) => (
+          <Werkbon
+            code={d.code}
+            titel={d.titel}
+            beschrijving={d.kort}
+            voorWie={d.voorWie}
+            doorlooptijd={d.doorlooptijd}
+            investering={d.investering}
+            href={`/diensten/${d.slug}/`}
+            stamp={i === 0 ? 'Meest gekozen' : i === 1 ? 'Maatwerk' : 'Terugkerend'}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--panel" aria-labelledby="probleem-titel">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">De aanleiding</p>
+        <h2 id="probleem-titel">Je hebt geen AI-strategie nodig. Je hebt één proces nodig dat stopt met handwerk zijn.</h2>
+      </div>
+      <div>
+        <p class="lede" style="margin-bottom:1.6rem">
+          Herken je er drie of meer? Dan is er genoeg te winnen — en meestal zit de winst niet in
+          het duurste systeem, maar in het saaiste uur van de week.
+        </p>
+        <ul class="principles">
+          <li><span><strong>Dezelfde gegevens twee keer intypen.</strong> Order in de mail, order in het systeem, order op de factuur.</span></li>
+          <li><span><strong>Offertes die een halve dag kosten.</strong> Terwijl 80% van de tekst steeds hetzelfde is.</span></li>
+          <li><span><strong>Klantvragen die drie keer per dag terugkomen.</strong> Openingstijden, levertijd, parkeren, voorraad.</span></li>
+          <li><span><strong>Kennis die in iemands hoofd zit.</strong> En dus verdwijnt zodra diegene op vakantie is.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="werkwijze-titel">
+    <div class="container">
+      <div class="split" style="margin-bottom:2.5rem">
+        <div>
+          <p class="eyebrow">Werkwijze</p>
+          <h2 id="werkwijze-titel">Van eerste gesprek naar werkende software in vijf stappen.</h2>
+        </div>
+        <div>
+          <p>
+            Elke stap heeft een eigen prijs en een eigen uitkomst. Je kunt na elke stap stoppen.
+            Na de pilot weet je of het werkt, voordat je het volledige bedrag hebt uitgegeven.
+          </p>
+          <a class="text-link" href="/werkwijze/">Lees de volledige werkwijze <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <ol class="steps">
+        {stappen.map((s) => (
+          <li class="step">
+            <div class="step__id"><b>{s.id.split(' ')[1]}</b>Stap</div>
+            <div>
+              <h3>{s.titel}</h3>
+              <p>{s.tekst}</p>
+            </div>
+            <div class="step__meta">
+              <span>Doorlooptijd</span>{s.duur}
+              <span style="margin-top:0.5rem">Investering</span>{s.prijs}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--panel" aria-labelledby="voorwie-titel">
+    <div class="container">
+      <div class="split" style="margin-bottom:2.5rem">
+        <div>
+          <p class="eyebrow">Voor wie</p>
+          <h2 id="voorwie-titel">Bedrijven waar de mensen het werk doen, niet de IT-afdeling.</h2>
+        </div>
+        <div>
+          <p>
+            Wij werken voor het mkb in Het Gooi: bedrijven tussen de vijf en honderd mensen, zonder
+            eigen ontwikkelteam. Vaak is er wel een systeem, maar doet niemand het onderhoud. Precies
+            daar komen wij binnen.
+          </p>
+          <a class="text-link" href="/voorbeelden/">Bekijk voorbeelden per sector <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="grid-2" style="gap:1.6rem 3rem">
+        {SECTOREN.map((s) => (
+          <div class="sector">
+            <h3>{s.naam}</h3>
+            <p>{s.voorbeeld}</p>
+            <p class="sector__build"><strong>Zo bouwen wij het:</strong> {s.build}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="prijzen-titel">
+    <div class="container">
+      <div class="split" style="margin-bottom:1rem">
+        <div>
+          <p class="eyebrow">Wat het kost</p>
+          <h2 id="prijzen-titel">Een prijs die past bij een bedrijf van vijftien mensen.</h2>
+        </div>
+        <div>
+          <p>
+            Geen uurtje-factuurtje en geen offerte van drie pagina’s. Dit zijn de bedragen waarmee we
+            normaal starten, met wat je per onderdeel krijgt.
+          </p>
+          <a class="text-link" href="/prijzen/">Alle tarieven en wat inbegrepen is <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <table class="pricetable">
+        <caption>Alle bedragen zijn exclusief btw. Hosting en modelkosten worden tegen kostprijs doorbelast, meestal € 15–€ 40 per maand.</caption>
+        <thead>
+          <tr><th scope="col">Onderdeel</th><th scope="col">Wat je krijgt</th><th scope="col">Investering</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Kennismaking</th><td>30 minuten, één proces, eerlijk advies</td><td>{PRIJS.gesprek}</td></tr>
+          <tr><th scope="row">Kansenkaart</th><td>Procesanalyse en businesscase, verrekend bij opdracht</td><td>{PRIJS.scan}</td></tr>
+          <tr><th scope="row">AI-pilot</th><td>Eén proces live, inclusief koppeling en opleiding</td><td>{PRIJS.pilot}</td></tr>
+          <tr><th scope="row">App of portaal</th><td>Eerste werkende versie, jouw huisstijl</td><td>{PRIJS.app}</td></tr>
+          <tr><th scope="row">Onderhoud</th><td>Monitoring, updates en kleine wijzigingen</td><td>{PRIJS.onderhoud} p/m</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section section--ink" aria-labelledby="waarom-titel">
+    <div class="container rail">
+      <div>
+        <p class="eyebrow">Waarom Kwartel Studio</p>
+        <h2 id="waarom-titel">Klein genoeg om eerlijk te zijn. Ervaren genoeg om het af te maken.</h2>
+        <p style="margin-top:1.2rem;font-size:0.95rem">
+          We zitten aan De Kwartel in Laren, tussen de bedrijven die het moeten doen. Geen
+          tussenlagen, geen accountmanagers, geen roadmap die niemand leest.
+        </p>
+        <a class="text-link" href="/over/" style="display:inline-block;margin-top:1rem;color:var(--mark);border-color:#4c6b5c">Over de studio <span aria-hidden="true">→</span></a>
+      </div>
+      <ol class="principles">
+        {principes.map((p) => (
+          <li><span><strong>{p.titel}</strong>{p.tekst}</span></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <Faq items={faq} intro="Staat je vraag er niet bij? Bel of mail gerust — je krijgt antwoord van degene die het ook bouwt." />
+
+  <CtaBand />
+</Base>
