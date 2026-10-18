@@ -96,22 +96,16 @@ python3 scripts/make_og.py
 
 ## Deploy
 
+Live: **https://kwartelstudio.casadosmoreira.com** · Coolify-app `ok3sojaz91rwii7xoawajruk`
+(project `Kwartel Studio`, environment `production`).
+
 Push naar `main`, daarna de deploy triggeren (apps aangemaakt via de Coolify public-repo API
 hebben géén GitHub-webhook):
 
 ```bash
-python3 -c "
-import os, json
-from urllib.request import Request, urlopen
-env = {}
-for line in open(os.path.expanduser('~/.hermes/.env')):
-    if '=' in line:
-        k, v = line.strip().split('=', 1)
-        env[k] = v.strip().strip('\"').strip(\"'\")
-req = Request(f\"{env['COOLIFY_URL']}/api/v1/deploy?uuid=<APP_UUID>\",
-    method='POST', headers={'Authorization': f'Bearer {env[\"COOLIFY_TOKEN\"]}'})
-print(urlopen(req).read().decode())
-"
+set -a; . ~/.hermes/.env; set +a
+curl -s -X POST -H "Authorization: Bearer $COOLIFY_TOKEN" \
+  "$COOLIFY_URL/api/v1/deploy?uuid=ok3sojaz91rwii7xoawajruk&force=false"
 ```
 
 Wacht ~60 seconden en controleer:
@@ -120,6 +114,22 @@ Wacht ~60 seconden en controleer:
 curl -sI https://kwartelstudio.casadosmoreira.com/ | head -3
 curl -s https://kwartelstudio.casadosmoreira.com/llms.txt | head -5
 ```
+
+### Coolify API-gotchas (4.2, oktober 2026)
+
+- `POST /api/v1/applications/public` **weigert `fqdn`** (`422 This field is not allowed`) en
+  vereist naast `environment_name` ook **`environment_uuid`** (uit
+  `GET /api/v1/projects/<project_uuid>/environments`).
+- Domeinen zet je achteraf met `PATCH /api/v1/applications/<uuid>` en het veld **`domains`**
+  (komma-gescheiden string). Daarna is een **tweede deploy** nodig, anders blijven de
+  Traefik-labels op het auto-gegenereerde `<uuid>.casadosmoreira.com` staan: het eigen domein
+  geeft dan `404` op http en een self-signed certificaat op https.
+- `GET /api/v1/servers` kan traag zijn; gebruik een timeout van 60–90s.
+
+### Productiedomein
+
+Het domein `kwartelstudio.nl` (+ `www`) staat al op de app. Zodra de DNS A-records naar
+`152.53.123.24` wijzen, uitgeeft Coolify automatisch het certificaat. Geen codewijziging nodig.
 
 ## SEO / AEO-checklist (staat aan)
 
