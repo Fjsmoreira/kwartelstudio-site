@@ -170,6 +170,7 @@ export function prijsSchema() {
     itemListElement: [
       { naam: 'Kennismaking', prijs: '0', beschrijving: 'Gesprek van 30 minuten, vrijblijvend' },
       { naam: 'Kansenkaart', prijs: '750', beschrijving: 'Procesanalyse met businesscase, wordt verrekend bij opdracht' },
+      { naam: 'Instap-automatisering', prijs: '1950', beschrijving: `Vanaf ${PRIJS.instap}, één taak in twee weken, zonder koppelingen` },
       { naam: 'AI-pilot', prijs: '3950', beschrijving: `Vanaf ${PRIJS.pilot}, één proces live in vier weken` },
       { naam: 'AI-implementatie', prijs: '6500', beschrijving: `Vanaf ${PRIJS.implementatie}, meerdere processen en koppelingen` },
       { naam: 'App of portaal', prijs: '9500', beschrijving: `Vanaf ${PRIJS.app}, eerste werkende versie` },

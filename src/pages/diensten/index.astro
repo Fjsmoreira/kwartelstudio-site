@@ -28,15 +28,15 @@ const schemas = [
     <p class="eyebrow">Diensten</p>
     <h1>Wat we bouwen, en wat het kost om het te laten draaien.</h1>
     <p class="lede" style="margin-top:1.2rem;max-width:52ch">
-      Kwartel Studio doet drie dingen: een proces automatiseren, een app of portaal bouwen, en
-      zorgen dat het blijft werken. Alles met een vaste prijs per fase en een oplevering die je
-      zelf kunt controleren.
+      Kwartel Studio doet vier dingen: een kleine taak automatiseren, een proces automatiseren, een
+      app of portaal bouwen, en zorgen dat het blijft werken. Alles met een vaste prijs per fase en
+      een oplevering die je zelf kunt controleren.
     </p>
   </header>
 
   <section class="section" aria-label="Overzicht diensten">
-    <div class="container grid-3">
-      {DIENSTEN.map((d, i) => (
+    <div class="container grid-2">
+      {DIENSTEN.map((d) => (
         <Werkbon
           code={d.code}
           titel={d.titel}
@@ -45,7 +45,7 @@ const schemas = [
           doorlooptijd={d.doorlooptijd}
           investering={d.investering}
           href={`/diensten/${d.slug}/`}
-          stamp={i === 0 ? 'Meest gekozen' : i === 1 ? 'Maatwerk' : 'Terugkerend'}
+          stamp={d.slug === 'instap' ? 'Klein beginnen' : d.slug === 'ai-implementatie' ? 'Meest gekozen' : d.slug === 'app-ontwikkeling' ? 'Maatwerk' : 'Terugkerend'}
         />
       ))}
     </div>

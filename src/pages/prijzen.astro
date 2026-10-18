@@ -24,7 +24,7 @@ const faq = [
   },
   {
     q: 'Hoe wordt er gefactureerd?',
-    a: 'In drie delen: 40% bij de start, 40% bij de pilotoplevering en 20% na ingebruikname. Onderhoud factureren we maandelijks achteraf. Betalingstermijn is veertien dagen.',
+    a: 'In twee delen: 50% bij de start en 50% na oplevering. Onderhoud factureren we maandelijks achteraf. Betalingstermijn is veertien dagen. Bij een instap-automatisering geldt het volledige bedrag bij de start, omdat het traject maar twee weken duurt.',
   },
   {
     q: 'Kan ik beginnen met alleen een kansenkaart?',
@@ -64,8 +64,9 @@ const schemas = [
       <div class="answer-box" style="margin-top:0">
         <p>
           <strong>Kort antwoord:</strong> een AI-pilot bij een mkb-bedrijf kost bij Kwartel Studio
-          {PRIJS.pilot} en staat in vier weken live. Een eerste app of portaal begint bij
-          {PRIJS.app}. Onderhoud is {PRIJS.onderhoud} per maand en maandelijks opzegbaar.
+          {PRIJS.pilot} en staat in vier weken live. Wil je kleiner beginnen, dan is er een
+          instap-automatisering van twee weken voor {PRIJS.instap}. Een eerste app of portaal begint
+          bij {PRIJS.app}. Onderhoud is {PRIJS.onderhoud} per maand en maandelijks opzegbaar.
         </p>
       </div>
 
@@ -86,6 +87,12 @@ const schemas = [
             <td>Procesanalyse, urenberekening, businesscase en drie concrete kansen in volgorde van opbrengst</td>
             <td>1 week</td>
             <td>{PRIJS.scan}</td>
+          </tr>
+          <tr>
+            <th scope="row">Instap-automatisering</th>
+            <td>Eén taak werkend op je eigen voorbeelden, zonder koppelingen. Bedrag wordt verrekend als je daarna de pilot doet</td>
+            <td>2 weken</td>
+            <td>{PRIJS.instap}</td>
           </tr>
           <tr>
             <th scope="row">AI-pilot</th>

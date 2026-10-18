@@ -41,6 +41,7 @@ export const AREA = [
 export const PRIJS = {
   gesprek: 'gratis',
   scan: '€ 750',
+  instap: 'vanaf € 1.950',
   pilot: 'vanaf € 3.950',
   implementatie: 'vanaf € 6.500',
   app: 'vanaf € 9.500',
@@ -64,6 +65,47 @@ export type Dienst = {
 };
 
 export const DIENSTEN: Dienst[] = [
+  {
+    slug: 'instap',
+    code: 'KW-00',
+    titel: 'Instap-automatisering',
+    kort: 'Eén taak, twee weken, geen koppelingen. De kleinste manier om te zien of automatisering in jouw bedrijf werkt.',
+    voorWie: 'Wie wil beginnen zonder groot project',
+    doorlooptijd: '2 weken',
+    investering: 'vanaf € 1.950',
+    intro:
+      'Soms wil je gewoon eerst bewijs. Eén terugkerende taak die verdwijnt, zonder dat er een systeem aan te pas komt en zonder dat je een half project hoeft aan te gaan. Bijvoorbeeld: een e-mail met een vraag erin die automatisch een concept-antwoord oplevert, een pdf die wordt uitgelezen tot een tabel, of een lijst die zichzelf opschoont. Klein, afgebakend, en binnen twee weken in gebruik.',
+    bouwstenen: [
+      { titel: 'Eén taak, geen systeem', tekst: 'We pakken één handeling die je team dagelijks doet. Geen koppeling met je boekhouding of agenda — dat komt later als je verder wilt.' },
+      { titel: 'Jouw eigen voorbeelden', tekst: 'Je levert tien echte gevallen aan. Wij bouwen op die gevallen, niet op een demo met verzonnen data.' },
+      { titel: 'Werkt in je browser', tekst: 'Geen installatie, geen app. Een pagina die je team opent, met een voorbeeld en een knop.' },
+      { titel: 'Doorkijkje naar meer', tekst: 'Na oplevering hoor je wat de logische volgende stap zou zijn, en wat die kost. Zonder verplichting.' },
+    ],
+    oplevert: [
+      'Eén taak structureel uit het hoofd van je team',
+      'Bewijs of automatisering in jouw situatie werkt, voor minimaal geld',
+      'Een concreet vervolgvoorstel in plaats van een verkooppraatje',
+    ],
+    niet: [
+      'Geen koppeling met je bestaande systemen',
+      'Geen meerdere processen tegelijk',
+      'Geen maatwerk-interface met rechten per gebruiker',
+    ],
+    faq: [
+      {
+        q: 'Wat krijg ik precies voor € 1.950?',
+        a: 'Eén afgebakende taak die werkt op jouw eigen voorbeelden, een korte uitleg en dertig dagen nazorg. Geen koppelingen en geen systeemintegratie — daar is de pilot voor.',
+      },
+      {
+        q: 'Waarom zou ik dit doen in plaats van de pilot?',
+        a: 'Als je nog niet zeker weet of het iets voor je is, of als je team eerst wil zien dat het werkt voordat er een groter bedrag op tafel komt. Ga je daarna door, dan trekken we het instapbedrag af van de pilot.',
+      },
+      {
+        q: 'Kan ik hiermee ook naar een app toe groeien?',
+        a: 'Ja, maar dat is een aparte stap. De instap is bedoeld om te bewijzen dat één taak beter kan; een app of portaal is een eigen traject met eigen prijs.',
+      },
+    ],
+  },
   {
     slug: 'ai-implementatie',
     code: 'KW-01',

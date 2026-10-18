@@ -9,7 +9,7 @@ import { organisation, website, webPage, faqSchema, prijsSchema } from '../lib/s
 const faq = [
   {
     q: 'Wat kost AI-implementatie bij een mkb-bedrijf?',
-    a: 'Bij Kwartel Studio begint een pilot bij € 3.950 voor één proces, inclusief koppeling en oplevering in productie. Een volledige implementatie met meerdere processen start rond € 6.500 en een eerste werkende app of portaal rond € 9.500. Onderhoud is maandelijks opzegbaar vanaf € 195. Je krijgt altijd een vaste prijs per fase, geen open einde op uren.',
+    a: 'Bij Kwartel Studio begint een instap-automatisering van twee weken bij € 1.950, en een pilot met één proces inclusief koppeling bij € 3.950. Een volledige implementatie met meerdere processen start rond € 6.500 en een eerste werkende app of portaal rond € 9.500. Onderhoud is maandelijks opzegbaar vanaf € 195. Je krijgt altijd een vaste prijs per fase, geen open einde op uren.',
   },
   {
     q: 'Hoelang duurt het voordat zoiets live staat?',
@@ -160,20 +160,20 @@ const schemas = [
       <div class="split" style="margin-bottom:2.5rem">
         <div>
           <p class="eyebrow">Wat we doen</p>
-          <h2 id="diensten-titel">Drie werkbonnen, geen abonnement op beloftes.</h2>
+          <h2 id="diensten-titel">Vier werkbonnen, geen abonnement op beloftes.</h2>
         </div>
         <div>
           <p>
             De meeste mkb-bedrijven hebben geen AI-strategie nodig. Ze hebben iemand nodig die één
             vervelend proces overneemt en het daarna blijft onderhouden. Dat is precies wat wij doen,
-            in drie soorten opdrachten.
+            in vier soorten opdrachten — van een kleine start van twee weken tot een eigen app.
           </p>
           <a class="text-link" href="/diensten/">Alle diensten en werkwijze <span aria-hidden="true">→</span></a>
         </div>
       </div>
 
-      <div class="grid-3">
-        {DIENSTEN.map((d, i) => (
+      <div class="grid-2">
+        {DIENSTEN.map((d) => (
           <Werkbon
             code={d.code}
             titel={d.titel}
@@ -182,7 +182,7 @@ const schemas = [
             doorlooptijd={d.doorlooptijd}
             investering={d.investering}
             href={`/diensten/${d.slug}/`}
-            stamp={i === 0 ? 'Meest gekozen' : i === 1 ? 'Maatwerk' : 'Terugkerend'}
+            stamp={d.slug === 'instap' ? 'Klein beginnen' : d.slug === 'ai-implementatie' ? 'Meest gekozen' : d.slug === 'app-ontwikkeling' ? 'Maatwerk' : 'Terugkerend'}
           />
         ))}
       </div>
@@ -295,6 +295,7 @@ const schemas = [
         <tbody>
           <tr><th scope="row">Kennismaking</th><td>30 minuten, één proces, eerlijk advies</td><td>{PRIJS.gesprek}</td></tr>
           <tr><th scope="row">Kansenkaart</th><td>Procesanalyse en businesscase, verrekend bij opdracht</td><td>{PRIJS.scan}</td></tr>
+          <tr><th scope="row">Instap</th><td>Eén taak, twee weken, geen koppelingen</td><td>{PRIJS.instap}</td></tr>
           <tr><th scope="row">AI-pilot</th><td>Eén proces live, inclusief koppeling en opleiding</td><td>{PRIJS.pilot}</td></tr>
           <tr><th scope="row">App of portaal</th><td>Eerste werkende versie, jouw huisstijl</td><td>{PRIJS.app}</td></tr>
           <tr><th scope="row">Onderhoud</th><td>Monitoring, updates en kleine wijzigingen</td><td>{PRIJS.onderhoud} p/m</td></tr>

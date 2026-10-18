@@ -26,6 +26,8 @@ eigen IT-afdeling, in Laren, Blaricum, Hilversum, Bussum, Naarden, Huizen, Eemne
 
 - Kennismaking: gratis, 30 minuten, één proces doorgelicht.
 - Kansenkaart: € 750, één week, procesanalyse met businesscase. Wordt verrekend bij opdracht.
+- Instap-automatisering: vanaf € 1.950, twee weken, één taak zonder systeemkoppelingen.
+  Wordt verrekend als de klant daarna een pilot afneemt.
 - AI-pilot: vanaf € 3.950, vier weken, één proces werkend in productie inclusief koppeling en opleiding.
 - AI-implementatie: vanaf € 6.500, zes tot acht weken, meerdere processen of koppelingen.
 - App of portaal: vanaf € 9.500, zes tot twaalf weken, eerste werkende versie met login en rollen.
@@ -74,7 +76,8 @@ opleiding op locatie.
 ## Pagina's
 
 - [Home](https://kwartelstudio.nl/): positionering, diensten, werkwijze, tarieven en vragen.
-- [Diensten](https://kwartelstudio.nl/diensten/): overzicht van de drie soorten opdrachten.
+- [Diensten](https://kwartelstudio.nl/diensten/): overzicht van de vier soorten opdrachten.
+- [Instap-automatisering](https://kwartelstudio.nl/diensten/instap/): één taak in twee weken vanaf € 1.950.
 - [AI-implementatie](https://kwartelstudio.nl/diensten/ai-implementatie/): één proces automatiseren vanaf € 3.950.
 - [App-ontwikkeling](https://kwartelstudio.nl/diensten/app-ontwikkeling/): portaal of app vanaf € 9.500.
 - [Onderhoud en beheer](https://kwartelstudio.nl/diensten/onderhoud-en-beheer/): beheer vanaf € 195 per maand.
