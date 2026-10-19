@@ -1,0 +1,156 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Wat rekent een AI-consultant in Nederland per uur?',
+    a: 'Een zelfstandige AI-consultant rekent in 2026 gemiddeld € 120 per uur. Wie twee tot drie jaar ervaring heeft en schaarste in een niche, vraagt € 180 tot € 200. Het gemiddelde uurtarief van alle Nederlandse ICT-zelfstandigen lag in 2025 voor het eerst boven de € 100.',
+  },
+  {
+    q: 'Is een uurtarief of een vaste prijs beter voor een mkb-bedrijf?',
+    a: 'Voor een afgebakend proces is een vaste prijs bijna altijd beter: je weet vooraf wat je betaalt en de leverancier draagt het risico van tegenvallers. Een uurtarief is alleen logisch bij onderzoek waarbij de omvang echt onbekend is, en dan nog met een maximum.',
+  },
+  {
+    q: 'Waarom vragen sommige bureaus € 200 per uur en anderen € 75?',
+    a: 'Vier oorzaken: specialisatie (schaarse kennis), sector (zorg en finance betalen meer), contractvorm (korte opdrachten kosten meer per uur dan langlopende) en overhead (kantoor, sales, projectleiding). Een laag tarief betekent niet automatisch goedkoper: het aantal uren loopt bij onervaren partijen vaak op.',
+  },
+  {
+    q: 'Wat kost een AI-project van vier weken dan in totaal?',
+    a: 'Bij 60 uur werk en een marktconform tarief van € 120 per uur: € 7.200. Daar komen bij bureaus vaak projectleiding en een specificatiefase bij, waardoor dezelfde oplevering op € 12.000 tot € 20.000 uitkomt. Bij Kwartel Studio is een pilot met één proces en één koppeling een vaste € 3.950.',
+  },
+];
+---
+
+<Artikel
+  titel="Wat rekent een AI-consultant in Nederland per uur?"
+  omschrijving="Een zelfstandige AI-consultant rekent in 2026 gemiddeld € 120 per uur, en het gemiddelde ICT-tarief ligt boven de € 100. Dit zijn de cijfers met bron, en dit betekent het voor een mkb-project."
+  slug="wat-rekent-een-ai-consultant-per-uur"
+  datum="2026-10-18"
+  leestijd={6}
+  onderwerp="Prijzen"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> een zelfstandige AI-consultant in Nederland rekent in 2026
+      gemiddeld <strong>€ 120 per uur</strong>. Ervaren specialisten vragen € 180 tot € 200, het
+      gemiddelde uurtarief van alle ICT-zelfstandigen samen kwam in 2025 voor het eerst boven de
+      € 100, en adviesbureaus tot 75 medewerkers zitten op € 112. Een pilot van 60 uur kost daarmee
+      € 7.200 aan consultancy — los van de software.
+    </p>
+  </div>
+
+  <p>
+    Wie een AI-project wil laten bouwen, krijgt meestal geen prijslijst te zien. Bureaus werken met
+    “in overleg” of met een offerte na een gesprek. Dat is begrijpelijk — elk project is anders —
+    maar het maakt vergelijken onmogelijk. Daarom hier de tarieven die de Nederlandse markt zélf
+    publiceert, met bron en datum, zodat je zelf kunt narekenen of een aanbieding redelijk is.
+  </p>
+
+  <h2>De tarieven, met bron</h2>
+
+  <table>
+    <thead>
+      <tr><th>Wie</th><th>Gemiddeld per uur</th><th>Bron en datum</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>AI-consultant, zelfstandig</td><td>€ 120</td><td>Knab Zzp Uurtarievenboekje 2026</td></tr>
+      <tr><td>AI-consultant met 2–3 jaar ervaring, niche</td><td>€ 180 – 200</td><td>Knab 2026 (individuele cases)</td></tr>
+      <tr><td>IT-architect, zelfstandig</td><td>€ 116 – 127</td><td>Knab 2026 · Emerce, maart 2026</td></tr>
+      <tr><td>Security-architect</td><td>€ 125</td><td>Emerce, maart 2026</td></tr>
+      <tr><td>Adviesbureau tot 75 fte</td><td>€ 112</td><td>Consultancy.nl, maart 2024</td></tr>
+      <tr><td>Alle ICT-zelfstandigen samen</td><td>€ 100+</td><td>Emerce, maart 2026 (cijfer 2025)</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Twee dingen vallen op. Het eerste: de bandbreedte is klein. Tussen een AI-consultant en een
+    IT-architect zit nog geen € 10 verschil. Wie € 60 per uur rekent voor AI-werk is geen
+    prijsbreker maar een uitzondering — vaak iemand die net begint, of iemand die een deel van het
+    werk niet doet. Het tweede: dit zijn tarieven van zelfstandigen. Een bureau telt daar overhead
+    bij op en komt eerder op € 130 tot € 180.
+  </p>
+
+  <h2>Wat bepaalt het verschil tussen € 75 en € 200</h2>
+
+  <h3>Specialisatie</h3>
+  <p>
+    Schaarste. Iemand die zowel een taalmodel kan inrichten als een koppeling met een verouderd
+    ERP-systeem kan bouwen, is zeldzamer dan iemand die een chatbot in een standaardtool zet. Dat
+    verschil zie je direct terug in het tarief.
+  </p>
+
+  <h3>Contractvorm en looptijd</h3>
+  <p>
+    Een opdracht van twintig uur kost per uur meer dan een traject van zes maanden. Bij kort werk
+    zit acquisitie, inwerken en risico in het tarief. Bij lang werk kan een leverancier spreken over
+    een lagere uurtarief in ruil voor zekerheid — en dat is precies waarom een vaste prijs per fase
+    voor beide partijen prettiger is.
+  </p>
+
+  <h3>Wie doet het werk</h3>
+  <p>
+    Het duurste misverstand in de markt: een offerte met een seniortarief terwijl het werk door een
+    junior wordt gedaan. Vraag altijd wie er daadwerkelijk bouwt, en spreek af dat wisselen van
+    mensen overleg vereist.
+  </p>
+
+  <h3>Aansprakelijkheid en overdracht</h3>
+  <p>
+    Een hoger tarief is soms terecht: als de leverancier verwerkersovereenkomsten regelt,
+    documentatie oplevert en de code overdraagt in plaats van achterhoudt. Dat is geen luxe; het is
+    het verschil tussen een leverancier en een afhankelijkheid.
+  </p>
+
+  <h2>Wat een mkb-project daardoor kost</h2>
+
+  <p>
+    Reken een pilot van één proces, inclusief koppeling en opleiding, op 55 tot 65 uur. Tegen het
+    gemiddelde tarief van € 120 is dat € 6.600 tot € 7.800. Bij een bureau met projectleiding en
+    een specificatiefase komt daar 30 tot 60 procent bij.
+  </p>
+
+  <table>
+    <thead>
+      <tr><th>Oplevering</th><th>Uren</th><th>Marktwaarde</th><th>Bij Kwartel Studio</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Eén taak, geen koppelingen</td><td>25–30</td><td>€ 3.000 – 3.600</td><td>€ 1.950</td></tr>
+      <tr><td>Eén proces, één koppeling</td><td>55–65</td><td>€ 6.600 – 7.800</td><td>€ 3.950</td></tr>
+      <tr><td>Meerdere processen</td><td>90–140</td><td>€ 10.800 – 16.800</td><td>vanaf € 6.500</td></tr>
+      <tr><td>App of portaal</td><td>120–160</td><td>€ 14.400 – 19.200</td><td>vanaf € 9.500</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Dat verschil is geen marketingtruc. Het zit in het model: geen kantoor in Amsterdam, geen
+    tussenlagen, geen verkooptraject van drie gesprekken voordat er iets gebouwd wordt. Eén
+    gesprek, één proces, vaste prijs. Wie een team van tien en een strategy deck zoekt, is bij een
+    groot bureau beter af — en dat is ook een eerlijk antwoord.
+  </p>
+
+  <h2>Vier signalen dat een tarief niet klopt</h2>
+
+  <ul>
+    <li><strong>Een uurtarief zonder maximum.</strong> Vraag altijd om een plafond of een vaste prijs per fase. Een open einde is geen partnerschap.</li>
+    <li><strong>“We maken eerst een analyse van € 15.000.”</strong> Soms terecht, vaak een manier om het echte werk uit te stellen. Bij een proces van één afdeling hoort een analyse van een week, geen kwartaal.</li>
+    <li><strong>Prijs per user bij maatwerk.</strong> Eigen software hoort geen licentiemodel te hebben. Betaal voor het bouwen en het beheer, niet per stoel.</li>
+    <li><strong>Geen overdracht.</strong> Als code, data en hostingtoegang niet bij oplevering naar jou gaan, huur je geen leverancier maar een gijzelaar.</li>
+  </ul>
+
+  <h2>Dus wat is een redelijke prijs?</h2>
+
+  <p>
+    Voor een mkb-bedrijf dat één proces wil automatiseren: tussen € 4.000 en € 8.000 voor de
+    eerste werkende versie, en € 150 tot € 400 per maand voor beheer. Alles daaronder is meestal
+    te beperkt om echt te werken; alles daarboven moet je kunnen verklaren met uren, koppelingen en
+    aansprakelijkheid. Wie geen urenspecificatie wil geven, heeft geen hogere prijs maar een
+    slechtere offerte.
+  </p>
+
+  <p>
+    Wil je weten wat jouw proces zou kosten? In een gesprek van dertig minuten lopen we het door en
+    noemen we een bedrag. Dat is gratis, en je hoeft er niets voor te kopen.
+    <a href="/contact/">Plan een gesprek</a> of bekijk <a href="/prijzen/">alle tarieven</a>.
+  </p>
+</Artikel>

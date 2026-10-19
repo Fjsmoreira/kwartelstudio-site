@@ -11,6 +11,39 @@ export type Artikel = {
 
 export const ARTIKELEN: Artikel[] = [
   {
+    slug: 'wat-rekent-een-ai-consultant-per-uur',
+    titel: 'Wat rekent een AI-consultant in Nederland per uur?',
+    vraag: 'Wat rekent een AI-consultant in Nederland per uur?',
+    omschrijving:
+      'De uurtarieven van AI-consultants, IT-architecten en adviesbureaus in Nederland, met bron en datum. En wat dat betekent voor een mkb-project van vier weken.',
+    datum: '2026-10-18',
+    gewijzigd: '2026-10-18',
+    leestijd: 6,
+    onderwerp: 'Prijzen',
+  },
+  {
+    slug: 'wat-kost-een-chatbot-voor-mkb',
+    titel: 'Wat kost een chatbot voor een mkb-bedrijf in 2026?',
+    vraag: 'Wat kost een chatbot voor een mkb-bedrijf?',
+    omschrijving:
+      'Wat een chatbot, assistent of agent kost in het mkb: prijzen per soort, wat er in de prijs zit, wat er los bij komt en wanneer je er beter niet aan begint.',
+    datum: '2026-10-18',
+    gewijzigd: '2026-10-18',
+    leestijd: 7,
+    onderwerp: 'Prijzen',
+  },
+  {
+    slug: 'ai-bureau-of-freelancer',
+    titel: 'AI-bureau, freelancer of zelf doen: wat past bij een bedrijf van vijftien mensen?',
+    vraag: 'Kun je als mkb-bedrijf AI beter zelf doen, of uitbesteden aan een freelancer of bureau?',
+    omschrijving:
+      'Zelf doen met een AI-abonnement, een freelancer of een klein bureau: wat elk kost, waar elk faalt en de ene vraag die de keuze beslist.',
+    datum: '2026-10-18',
+    gewijzigd: '2026-10-18',
+    leestijd: 7,
+    onderwerp: 'Keuze',
+  },
+  {
     slug: 'wat-kost-ai-implementatie-mkb',
     titel: 'Wat kost AI-implementatie voor een mkb-bedrijf?',
     vraag: 'Wat kost AI-implementatie voor een mkb-bedrijf?',

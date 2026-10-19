@@ -1,0 +1,154 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Kan een bedrijf van vijftien mensen zelf AI implementeren?',
+    a: 'Voor losse taken wel: een abonnement op een AI-assistent kost € 23 tot € 30 per gebruiker per maand en levert tijdwinst op bij schrijven en samenvatten. Voor een proces dat elke dag honderden keren moet kloppen — orderinvoer, planning, dossiers — is zelf bouwen meestal duurder dan inhuren, omdat niemand het kan onderhouden als degene die het bouwde vertrekt.',
+  },
+  {
+    q: 'Wat is het verschil tussen een AI-bureau en een freelancer?',
+    a: 'Een freelancer is één persoon: snel, direct en meestal € 100 tot € 120 per uur, maar zonder vervanging bij ziekte of drukte. Een bureau heeft meerdere mensen en dus continuïteit, maar rekent € 130 tot € 180 per uur en zet vaak een projectmanager tussen jou en de bouwer. Voor een afgebakend proces van vier weken is een kleine studio meestal de beste prijs-kwaliteitverhouding.',
+  },
+  {
+    q: 'Waar moet ik op letten bij een klein AI-bureau?',
+    a: 'Drie dingen: of je de code en documentatie bij oplevering krijgt, wie er daadwerkelijk bouwt (de oprichter of een onderaannemer), en wat er gebeurt als de samenwerking stopt. Vraag dat laatste hardop, want het antwoord zegt meer over de leverancier dan de offerte.',
+  },
+  {
+    q: 'Wat is goedkoper: zelf doen met ChatGPT of laten bouwen?',
+    a: 'Voor één terugkerende taak per persoon is zelf doen goedkoper. Zodra het proces meerdere mensen raakt, gecontroleerd moet worden en gekoppeld is aan een systeem, wint bouwen: een abonnement heeft geen logging, geen terugvalroute en geen eigenaar als de persoon die de prompts onderhoudt vertrekt.',
+  },
+];
+---
+
+<Artikel
+  titel="AI-bureau, freelancer of zelf doen: wat past bij een bedrijf van vijftien mensen?"
+  omschrijving="Zelf doen met ChatGPT, een freelancer of een klein bureau: wat elk kost, waar elk faalt en hoe je kiest voor een bedrijf tussen de vijf en honderd medewerkers."
+  slug="ai-bureau-of-freelancer"
+  datum="2026-10-18"
+  leestijd={7}
+  onderwerp="Keuze"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> voor losse taken is zelf doen met een AI-abonnement het
+      goedkoopst (€ 23 tot € 30 per gebruiker per maand). Voor een proces dat dagelijks moet
+      kloppen is een klein bureau of een freelancer verstandiger: € 100 tot € 180 per uur, of een
+      vaste prijs van € 1.950 tot € 9.500 per fase. De keuze hangt niet af van prijs, maar van de
+      vraag wie het onderhoudt als de maker weg is.
+    </p>
+  </div>
+
+  <p>
+    Elke ondernemer met vijftien mensen komt op hetzelfde punt: iemand heeft ontdekt dat ChatGPT
+    helpt bij offertes, en nu wil de rest van het team het ook. Dan is de vraag niet “welke AI”,
+    maar “wie maakt dit betrouwbaar”. Dat is een organisatievraag, en het antwoord bepaalt de
+    kosten.
+  </p>
+
+  <h2>De drie routes, eerlijk vergeleken</h2>
+
+  <table>
+    <thead>
+      <tr><th></th><th>Zelf doen</th><th>Freelancer</th><th>Klein bureau</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Kosten</strong></td><td>€ 23–30 p/user p/m</td><td>€ 100–120 p/u</td><td>vaste prijs per fase</td></tr>
+      <tr><td><strong>Doorlooptijd</strong></td><td>direct, maar nooit af</td><td>2–6 weken</td><td>2–8 weken</td></tr>
+      <tr><td><strong>Kwaliteit bij complexiteit</strong></td><td>laag</td><td>wisselt sterk</td><td>hoog, mits klein team</td></tr>
+      <tr><td><strong>Continuïteit</strong></td><td>hangt aan één persoon</td><td>één persoon, geen vervanging</td><td>tweede persoon inzetbaar</td></tr>
+      <tr><td><strong>Risico</strong></td><td>schaduw-AI, geen logging</td><td>stopt bij oplevering</td><td>afhankelijk van de studio</td></tr>
+      <tr><td><strong>Past bij</strong></td><td>losse taken, één team</td><td>specialistisch, korte klus</td><td>proces met systeem erachter</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Route 1: zelf doen</h2>
+
+  <p>
+    Onderschat dit niet. Een team dat leert werken met een AI-assistent wint echt uren bij
+    schrijven, samenvatten en brainstormen. Daar is geen project voor nodig, en € 25 per maand is
+    een schijntje.
+  </p>
+
+  <p>
+    Waar het misgaat: zodra het proces <em>moet</em> kloppen. Een abonnement heeft geen logging, geen
+    foutafhandeling en geen terugvalroute. Als de persoon die de prompts onderhoudt op vakantie is,
+    stopt het. En als er persoonsgegevens in het spel zijn, is er niemand die heeft nagedacht over de
+    grondslag en de bewaartermijn — dat is precies het punt waar de Autoriteit Persoonsgegevens
+    naar kijkt.
+  </p>
+
+  <h2>Route 2: een freelancer</h2>
+
+  <p>
+    Snel, direct en zonder tussenlagen. Je spreekt de persoon die bouwt, en dat is goud waard bij
+    een klein project. Het tarief van € 100 tot € 120 per uur is marktconform voor AI-werk.
+  </p>
+
+  <p>
+    De beperkingen zijn organisatorisch, niet technisch. Eén persoon kan ziek zijn, vol zitten, of
+    na jou een grotere klant krijgen. En de vraag “wie lost dit op als jij er niet bent” heeft bij
+    een freelancer geen goed antwoord — wat betekent dat je zelf eigenaar moet worden van de code
+    en de documentatie. Dat is te regelen, maar je moet het eisen.
+  </p>
+
+  <h2>Route 3: een klein bureau</h2>
+
+  <p>
+    Duurder per uur, goedkoper per resultaat als het project afgebakend is. Een bureau van twee tot
+    vijf mensen levert een vaste prijs, een tweede paar ogen, en iemand die na oplevering nog
+    bereikbaar is voor beheer.
+  </p>
+
+  <p>
+    Het risico zit in de omvang. Een bureau dat tussen jou en de bouwer een projectmanager zet,
+    verdubbelt de uren zonder de kwaliteit te verdubbelen. Vraag daarom altijd twee dingen: wie
+    bouwt er, en hoeveel mensen zitten er tussen mij en die persoon.
+  </p>
+
+  <h2>De vraag die alles beslist</h2>
+
+  <p>
+    Niet “wat kost het”, maar: <strong>wie onderhoudt dit over twaalf maanden?</strong>
+  </p>
+
+  <ul>
+    <li>Als het antwoord “de leverancier, via een beheercontract” is, is een bureau logisch.</li>
+    <li>Als het antwoord “onze eigen IT” is, is een freelancer logisch — mits er goede documentatie wordt opgeleverd.</li>
+    <li>Als het antwoord “niemand” is, moet je niet beginnen, wat het ook kost.</li>
+  </ul>
+
+  <p>
+    Dat is ook de reden dat wij bij elke oplevering code, documentatie en hostingtoegang meegeven.
+    Niet uit idealisme, maar omdat een opdracht zonder overdracht geen opdracht is: het is een
+    abonnement met eenmalige kosten.
+  </p>
+
+  <h2>Een praktische beslisregel</h2>
+
+  <table>
+    <thead>
+      <tr><th>Situatie</th><th>Beste route</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Eén persoon wil sneller schrijven en samenvatten</td><td>Zelf doen, abonnement</td></tr>
+      <tr><td>Eén terugkerende taak, geen koppeling, geen systeem</td><td>Instap bij een kleine studio (€ 1.950)</td></tr>
+      <tr><td>Eén proces met een koppeling naar agenda, boekhouding of orders</td><td>Pilot bij een klein bureau (€ 3.950)</td></tr>
+      <tr><td>Zeer specialistisch onderdeel, intern eigenaarschap geregeld</td><td>Freelancer</td></tr>
+      <tr><td>Meerdere afdelingen, meerdere systemen, audits</td><td>Bureau met projectleiding</td></tr>
+      <tr><td>Proces is nog niet beschreven en niemand is eigenaar</td><td>Eerst analyseren, dan bouwen</td></tr>
+    </tbody>
+  </table>
+
+  <p>
+    Welke route je ook kiest: vraag naar de overdracht, vraag wie er bouwt, en vraag wat er gebeurt
+    als de samenwerking stopt. Wie die drie vragen goed beantwoordt, levert meestal ook goed werk.
+  </p>
+
+  <p>
+    Benieuwd waar jouw proces in past? We lopen het in dertig minuten door, zonder verplichting —
+    <a href="/contact/">plan een gesprek</a>. Of bekijk eerst
+    <a href="/prijzen/">wat een traject kost</a>.
+  </p>
+</Artikel>

@@ -92,6 +92,9 @@ opleiding op locatie.
 
 ## Kennisbank
 
+- [Wat rekent een AI-consultant in Nederland per uur?](https://kwartelstudio.nl/kennisbank/wat-rekent-een-ai-consultant-per-uur/): markttarieven met bron (AI-consultant € 120 p/u, IT-architect € 116–127, adviesbureau € 112).
+- [Wat kost een chatbot voor een mkb-bedrijf in 2026?](https://kwartelstudio.nl/kennisbank/wat-kost-een-chatbot-voor-mkb/): FAQ-bot € 1.950–3.950, assistent € 3.950–8.000, agent vanaf € 9.500.
+- [AI-bureau, freelancer of zelf doen?](https://kwartelstudio.nl/kennisbank/ai-bureau-of-freelancer/): wat elk kost en de ene vraag die de keuze beslist.
 - [Wat kost AI-implementatie voor een mkb-bedrijf?](https://kwartelstudio.nl/kennisbank/wat-kost-ai-implementatie-mkb/)
 - [AI en de AVG: wat mag je als mkb-bedrijf wel en niet?](https://kwartelstudio.nl/kennisbank/ai-en-de-avg/)
 - [Vijf AI-toepassingen die zich binnen drie maanden terugverdienen](https://kwartelstudio.nl/kennisbank/vijf-ai-toepassingen-terugverdienen/)

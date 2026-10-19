@@ -1,0 +1,152 @@
+---
+import Artikel from '../../layouts/Artikel.astro';
+
+const faq = [
+  {
+    q: 'Wat kost een chatbot voor een mkb-bedrijf?',
+    a: 'Een eenvoudige chatbot die veelgestelde vragen beantwoordt op basis van je eigen teksten kost € 1.950 tot € 3.950, inclusief inrichting en oplevering. Een assistent die ook in je agenda of ordersysteem werkt, zit op € 3.950 tot € 8.000. Een agent die zelfstandig acties uitvoert vanaf € 9.500. Maandelijkse modelkosten lopen van € 20 tot € 150.',
+  },
+  {
+    q: 'Is een chatbot goedkoper dan een medewerker?',
+    a: 'Dat is de verkeerde vergelijking. Een chatbot vervangt geen medewerker, maar vangt de herhaalvragen af zodat de medewerker het werk doet dat wél aandacht nodig heeft. Reken op 20 tot 40 procent van de vragen die wegvallen, niet 100 procent.',
+  },
+  {
+    q: 'Wat is het verschil tussen een chatbot en een AI-assistent?',
+    a: 'Een chatbot beantwoordt vragen in een gesprek. Een assistent heeft toegang tot je eigen documenten of systemen en kan bijvoorbeeld een afspraak in de agenda zetten. Een agent mag zelfstandig stappen uitvoeren, zoals een order aanmaken. Hoe meer actie, hoe hoger de prijs en het risico.',
+  },
+  {
+    q: 'Waarom vallen chatbots bij veel bedrijven tegen?',
+    a: 'Meestal doordat de bot geen bron heeft: hij verzint antwoorden omdat hij alleen een taalmodel is zonder jouw documentatie. Daarnaast ontbreekt vaak een goede route naar een mens. Een bot die niet weet wanneer hij moet stoppen, kost je klanten.',
+  },
+];
+---
+
+<Artikel
+  titel="Wat kost een chatbot voor een mkb-bedrijf in 2026?"
+  omschrijving="Een chatbot voor het mkb kost € 1.950 tot € 8.000, afhankelijk van of hij alleen vragen beantwoordt of ook in je systemen werkt. Dit zit er in elke prijsklasse."
+  slug="wat-kost-een-chatbot-voor-mkb"
+  datum="2026-10-18"
+  leestijd={7}
+  onderwerp="Prijzen"
+  faq={faq}
+>
+  <div class="answer-box">
+    <p>
+      <strong>Kort antwoord:</strong> een chatbot die vragen beantwoordt op basis van je eigen
+      teksten kost <strong>€ 1.950 tot € 3.950</strong>. Een assistent die ook een afspraak in je
+      agenda zet of een order opzoekt, zit op <strong>€ 3.950 tot € 8.000</strong>. Een agent die
+      zelfstandig acties uitvoert begint bij <strong>€ 9.500</strong>. Daar bovenop komen
+      modelkosten van € 20 tot € 150 per maand en beheer vanaf € 195 per maand.
+    </p>
+  </div>
+
+  <p>
+    “Chatbot” is een woord dat vier verschillende dingen betekent, en dat is precies waarom de
+    prijzen zo uiteenlopen. Een bedrijf dat een FAQ-bot van eenvoudige makelij vergelijkt met een
+    assistent die in het boekhoudsysteem kijkt, vergelijkt een fiets met een bestelbus. Daarom eerst
+    de driedeling, dan de bedragen.
+  </p>
+
+  <h2>De drie soorten, en wat ze kosten</h2>
+
+  <table>
+    <thead>
+      <tr><th>Soort</th><th>Wat hij doet</th><th>Bouwtijd</th><th>Prijs</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>FAQ-bot</strong></td>
+        <td>Beantwoordt vragen uit je eigen website, prijslijst en veelgestelde vragen. Geen acties.</td>
+        <td>1–2 weken</td>
+        <td>€ 1.950 – 3.950</td>
+      </tr>
+      <tr>
+        <td><strong>Assistent</strong></td>
+        <td>Zoekt in documenten, checkt beschikbaarheid, zet een afspraak in de agenda, maakt een concept-mail.</td>
+        <td>3–5 weken</td>
+        <td>€ 3.950 – 8.000</td>
+      </tr>
+      <tr>
+        <td><strong>Agent</strong></td>
+        <td>Voert zelfstandig stappen uit: order aanmaken, reservering bevestigen, voorraad checken en bijbestellen.</td>
+        <td>6–10 weken</td>
+        <td>vanaf € 9.500</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    De sprong tussen de drie zit niet in het gesprek — dat is bij alle drie vergelijkbaar — maar in
+    de <em>acties</em>. Praten is goedkoop; iets mogen doen in een systeem waar geld en
+    verplichtingen aan hangen, is duur, want daar moet je rechten, logging, foutafhandeling en een
+    menselijke terugvalroute inbouwen.
+  </p>
+
+  <h2>Wat er in de prijs zit</h2>
+
+  <ul>
+    <li><strong>Inrichting op jouw teksten.</strong> Niet de standaarddocumentatie van een tool, maar jouw menukaart, openingstijden, levervoorwaarden en uitzonderingen.</li>
+    <li><strong>Toetsing op echte vragen.</strong> De laatste honderd klantvragen uit je inbox of WhatsApp zijn het testmateriaal. Wat de bot daarop zegt, bepaalt of hij werkt.</li>
+    <li><strong>Een route naar een mens.</strong> De bot moet weten wanneer hij moet stoppen, en de vraag met context doorsturen.</li>
+    <li><strong>Opleiding van je team.</strong> Wie hem aanpast als de prijslijst verandert, en hoe.</li>
+  </ul>
+
+  <h2>Wat er níet in zit</h2>
+
+  <p>
+    Modelkosten. Die betaal je maandelijks en ze zijn afhankelijk van het aantal gesprekken: bij een
+    praktijk met vijftig gesprekken per dag is dat enkele tientallen euro’s, bij een drukke
+    webshop met duizenden gesprekken kan het oplopen tot meer dan honderd euro per maand. Wij
+    rekenen dat tegen kostprijs door, zonder marge — en we laten zien waar het bedrag vandaan komt.
+  </p>
+
+  <p>
+    Ook niet inbegrepen: het opschonen van je bronmateriaal. Als je website drie versies van je
+    openingstijden bevat, gaat een bot die drie versies netjes herhalen. Dat is geen fout van de
+    bot.
+  </p>
+
+  <h2>Wanneer een chatbot geen goed idee is</h2>
+
+  <ul>
+    <li><strong>Minder dan twintig vragen per dag.</strong> Dan is een goede FAQ-pagina goedkoper en sneller.</li>
+    <li><strong>Als het proces zelf stuk is.</strong> Een bot bovenop een rommelig proces automatiseert de rommel.</li>
+    <li><strong>Als je geen bronmateriaal hebt.</strong> Zonder documentatie wordt de bot een taalmodel dat gokt — en dat merk je binnen een week aan de klachten.</li>
+    <li><strong>Als niemand eigenaar is.</strong> Een bot die niemand onderhoudt, is over zes maanden een bron van verkeerde antwoorden.</li>
+  </ul>
+
+  <h2>Wat je echt moet vragen in een offerte</h2>
+
+  <p>
+    Niet “welk model gebruiken jullie” — dat verandert elke zes maanden en zegt niets over kwaliteit.
+    Vraag in plaats daarvan:
+  </p>
+
+  <ul>
+    <li>Op welke bronnen is de bot gebaseerd, en wie houdt die actueel?</li>
+    <li>Wat gebeurt er als hij het antwoord niet weet?</li>
+    <li>Waar komen de gesprekken te staan, en hoe lang?</li>
+    <li>Wat kost het als we na drie maanden iets willen aanpassen?</li>
+    <li>Krijgen we de gespreksdata en de configuratie mee als we stoppen?</li>
+  </ul>
+
+  <p>
+    Wie die vijf vragen kan beantwoorden, heeft een partner. Wie alleen over modellen praat, heeft
+    een demo.
+  </p>
+
+  <h2>Een realistische volgorde</h2>
+
+  <p>
+    Begin met de duizend vragen die je team al beantwoordt, en kijk welke twintig procent daarvan
+    het vaakst terugkomt. Zet daar een FAQ-bot op, meet een maand, en besluit dan of een assistent
+    de moeite is. Zo betaal je € 1.950 om te leren of het werkt, in plaats van € 9.500 om erachter
+    te komen dat je klanten liever bellen.
+  </p>
+
+  <p>
+    Meer weten over wat er in de verschillende fases zit? Bekijk
+    <a href="/diensten/instap/">de instap-automatisering</a> of
+    <a href="/kennisbank/chatbot-assistent-agent-verschil/">het verschil tussen een chatbot, assistent en agent</a>.
+  </p>
+</Artikel>
