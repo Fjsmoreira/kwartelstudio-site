@@ -857,3 +857,16 @@ strong { color: var(--ink); font-weight: 600; }
   }
   .werkbon--tilt { transform: none; }
 }
+
+/* Marktvergelijkingstabel op /prijzen/ — bronkolom heeft ruimte nodig */
+.markettable { table-layout: fixed; width: 100%; }
+.markettable th:nth-child(1), .markettable td:nth-child(1) { width: 34%; }
+.markettable th:nth-child(2), .markettable td:nth-child(2) { width: 20%; white-space: nowrap; }
+.markettable th:nth-child(3), .markettable td:nth-child(3) { width: 46%; }
+.markettable td:nth-child(3) { font-size: 0.88rem; color: var(--ink-3); white-space: normal; }
+@media (max-width: 700px) {
+  .markettable, .markettable tbody, .markettable tr, .markettable td { display: block; width: auto; }
+  .markettable th:nth-child(n), .markettable td:nth-child(n) { width: auto; }
+  .markettable thead { display: none; }
+  .markettable tr { border-bottom: 1px solid var(--line); padding-bottom: 0.6rem; }
+}
